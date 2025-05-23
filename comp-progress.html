@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Progress</title>
+    <style>
+        @font-face {
+            font-family: 'BatmanForever';
+            src: url('batman_forever/batmfa__.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background-color: #0D0D0D;
+            color: #FFD700;
+            font-family: 'BatmanForever', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            background: #222;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #FFD700;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-family: 'BatmanForever', sans-serif;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .rule {
+            background: #1A1A1A;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 5px solid #FFD700;
+        }
+
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        /* Main container */
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px; /* Space between each item */
+            padding: 50px;
+            margin-bottom: 50px;
+        }
+
+        /* Item style - Image + Text */
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Space between image and text */
+            max-width: 870px; /* Limit width for better layout control */
+            width: 100%;
+        }
+
+        /* Image styling */
+        .item img {
+            max-width: 200px; /* Set maximum width for images */
+            width: 100%;
+            border-radius: 8px; /* Optional: rounded corners */
+        }
+
+        .images {
+            align-items: center;
+            max-height: 300px;
+            max-width: 300px;
+        }
+
+        .text h2 {
+            font-family: 'BatmanForever', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .text p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #555;
+            margin: 20px;
+        }
+        .language-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(10, 20, 40, 0.9);
+            color: cyan;
+            border: 2px solid cyan;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+            box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.8);
+            font-family: 'BatmanForever', sans-serif;
+        }
+
+        .language-toggle:hover {
+            background: rgba(0, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="navbar">
+        <button class="language-toggle" onclick="toggleLanguage()" data-en="French" data-fr="Anglais">French</button>
+    </div>
+   <!-- Header Section -->
+   <header>
+    <h1 data-en="Component Progress" data-fr="Progrès Des Composantes">Component progress</h1>
+   </header>
+
+<!-- Navigation Menu -->
+<nav>
+    <a href="home.html" data-en="Home" data-fr="Accueil">Home</a>
+    <a href="team.html" data-en="Our Team" data-fr="Notre équipe">Our Team</a>
+    <a href="conception.html" data-en="Conception" data-fr="Conception">Conception</a>
+    <a href="rules.html" data-en="Rules" data-fr="Règles">Rules</a>
+    <a href="credits.html" data-en="Credits" data-fr="Crédits">Credits</a>
+</nav>
+
+<!-- Body Section -->
+<div class="content">
+    <!-- Section 1 -->
+<div class="item">
+  <img class="images"src="http://wicrobotics2025.crcrobotics.com/DESIGN1.jpg">
+  <img class="images"src="http://wicrobotics2025.crcrobotics.com/DESIGN2.jpg">
+  <img class="images"src="http://wicrobotics2025.crcrobotics.com/DESIGN3.jpg">
+  <div class="text">
+    <h2 data-en="Brainstorm & First Plans" data-fr="Réflexions et premiers plans">Brainstorm & First Plans</h2>
+  </div>
+</div>
+<div class="item">
+  <img class="images"src="http://wicrobotics2025.crcrobotics.com/Base1.jpg">
+  <img class="images"src="http://wicrobotics2025.crcrobotics.com/Base2.jpg">
+  <div class="text">
+    <h2 data-en="Building The Base & Adding Rive Motors" data-fr="Construction de la base et ajout des moteurs à rivets">Building The Base & Adding Rive Motors</h2>
+  </div>
+</div>
+<div class="item">
+  <img class="images"src="http://wicrobotics2025.crcrobotics.com/OBSTACLE1.jpg">
+  <div class="text">
+    <h2 data-en="BaneBot Motors Issue" data-fr="Problème de moteurs BaneBot">BaneBot Motors Issue</h2>
+    <li data-en="1st issue: mounting and  placement of our BaneBot motors for the drive system: reduced robot dimensions compared to previous years. Each motor would take up to much space for a direct drive system." data-fr="1er problème : le montage et l'emplacement de nos moteurs BaneBot pour le système d'entraînement : les dimensions du robot ont été réduites par rapport aux années précédentes. Chaque moteur prendrait trop de place pour un système d'entraînement direct."> 1st issue: mounting and  placement of our BaneBot motors for the drive system: reduced robot dimensions compared to previous years. Each motor would take up to much space for a direct drive system.</li>
+      <li data-en="1st solution: extend the base to the maximum robot dimensions possible: not enough to solve the problem." data-fr="1ère solution : étendre la base aux dimensions maximales du robot : pas suffisant pour résoudre le problème."> 1st solution: extend the base to the maximum robot dimensions possible: not enough to solve the problem. </li>
+      <li data-en="2nd solution: misplace  motor along the frame and use chain drive to keep the same power and speed as a direct drive system." data-fr="2ème solution : déplacer le moteur le long du cadre et utiliser la transmission par chaîne pour conserver la même puissance et la même vitesse qu'un système à transmission directe. ">2nd solution: misplace  motor along the frame and use chain drive to keep the same power and speed as a direct drive system.</li>
+  </div>
+</div>
+<div class="item">
+  <img class="images"src="YELLOW1.jpg">
+  <img class="images"src="YELLOW2.jpg">
+  <img class="images"src="MACHINE.jpg">
+  <div class="text">
+    <h2 data-en="Building The Pickup & Claw System" data-fr="Construction du système d'accrochage et de griffes">Building The Pickup & Claw System</h2>
+  </div>
+</div>
+<div class="item">
+  <img class="images"src="http://wicrobotics2025.crcrobotics.com/YELLOW1.jpg">
+  <img class="images"src="http://wicrobotics2025.crcrobotics.com/YELLOW2.jpg">
+  <div class="text">
+    <h2 data-en="Claw Mechanism Issue" data-fr="Problème de mécanisme de griffe">Claw Mechanism Issue</h2>
+    <p data-en="We started of with the idea of using a very similar system to the vex pro claw but with custom 3d printed parts and attachments to make it work for us." data-fr="Nous avons commencé avec l'idée d'utiliser un système très similaire au vex pro claw, mais avec des pièces et des accessoires imprimés en 3D pour le faire fonctionner pour nous.">We started of with the idea of using a very similar system to the vex pro claw but with custom 3d printed parts and attachments to make it work for us.</p>
+      <li data-en="Even through multiple prototypes, we were not able to find a practical way to incorporate all the functions we wanted." data-fr="Malgré de nombreux prototypes, nous n'avons pas réussi à trouver un moyen pratique d'intégrer toutes les fonctions que nous souhaitions.">Even through multiple prototypes, we were not able to find a practical way to incorporate all the functions we wanted.</li>
+      <li data-en="Switched to a more basic but practical system: the rack and pinion" data-fr="Nous avons changé à un système plus basique mais pratique : la crémaillère.">Switched to a more basic but practical system: the rack and pinion</li>
+     <li data-en="Eventually we were able to find a good 3D designed claw that would accomplish all our needs" data-fr="Finalement, nous avons pu trouver une bonne griffe conçue en 3D qui répondait à tous nos besoins."> Eventually we were able to find a good 3D designed claw that would accomplish all our needs</li> 
+  </div>
+</div>
+<div class="item">
+  <img class="images"src="http://wicrobotics2025.crcrobotics.com/THANG1.jpg">
+  <img class="images"src="http://wicrobotics2025.crcrobotics.com/THANG2.jpg">
+  <div class="text">
+    <h2 data-en="Testing & Driving" data-fr="Essais et conduite">Testing & Driving</h2>
+  </div>
+</div>
+<div class="item">
+  <img class="images"src="http://wicrobotics2025.crcrobotics.com/NO.jpg">
+  <div class="text">
+    <h2 data-en="BaneBot Issue #2" data-fr="Problème Banebot #2">BaneBot Issue #2</h2>
+    <p data-en="BaneBot drive system at first presented many issues;" data-fr="Le système d'entraînement de BaneBot a d'abord posé de nombreux problèmes;">BaneBot drive system at first presented many issues;</p>
+       <li data-en="Response time delay," data-fr="Délai de réponse,"> Response time delay, </li>
+       <li data-en="Response to certain code" data-fr="Réponse à certains codes"> Response to certain code </li> 
+      <li data-en="Voltage drops" data-fr="Chutes de tension"> Voltage drops </li>
+       <li data-en="Our steps for solving this issue" data-fr="Les étapes à suivre pour résoudre ce problème"> Our steps for solving this issue </li>
+       <li data-en="1. Redo all wiring connected to the motors (including speed controllers) to rule out any wiring problems." data-fr="1. Refaire tout le câblage connecté aux moteurs (y compris les variateurs de vitesse) pour éliminer tout problème de câblage."> 1. Redo all wiring connected to the motors (including speed controllers) to rule out any wiring problems. </li>
+       <li data-en="2. Updated and tweaked the code many times" data-fr="2. Actualisation et modification du code à plusieurs reprises"> 2. Updated and tweaked the code many times </li>
+       <li data-en="3. Connecting all motor pins to one node on our terminal block reducing lag and delay" data-fr="3. Connexion de toutes les broches du moteur à un nœud de notre bloc terminal, ce qui réduit le décalage et le retard."> 3. Connecting all motor pins to one node on our terminal block reducing lag and delay </li>
+      <li data-en="4. Switch to the gobilda yellow jacket bevel gear mechanism due to reliability reasons and lack of solutions to our BaneBot drive system." data-fr="4. Passage au mécanisme d'engrenage conique gobilda yellow jacket pour des raisons de fiabilité et par manque de solutions pour notre système d'entraînement BaneBot.">  4. Switch to the gobilda yellow jacket bevel gear mechanism due to reliability reasons and lack of solutions to our BaneBot drive system. </li>
+      <li data-en="In the end the gobilda system turned out a lot better than the BaneBot system we had came up with." data-fr="Au final, le système gobilda s'est avéré bien meilleur que le système BaneBot que nous avions imaginé."> In the end the gobilda system turned out a lot better than the BaneBot system we had came up with.</li>
+  </div>
+</div><div class="item">
+  <img class="images"src="http://wicrobotics2025.crcrobotics.com/LAUNCH1.jpg">
+  <img class="images"src="http://wicrobotics2025.crcrobotics.com/LAUNCH2.jpg">
+  <div class="text">
+    <h2 data-en="Launch System" data-fr="Système de lancement">Launch System</h2>
+  </div>
+</div><div class="item">
+  <img class="images"src="http://wicrobotics2025.crcrobotics.com/LNO.jpg">
+  <div class="text">
+    <h2 data-en="Launch Mechanism Issue" data-fr="Problème lié au mécanisme de lancement">Launch Mechanism Issue</h2>
+    <p data-en="First design came with a couple of issues:" data-fr="La première conception a posé quelques problèmes:"> First design came with a couple of issues: </p> 
+        <li data-en="1. Underperformance of the flywheel; was making contact with the plexi-glass under." data-fr="1. Manque de performance du volant d'inertie ; il entrait en contact avec le plexiglas sous le volant d'inertie."> 1. Underperformance of the flywheel; was making contact with the plexi-glass under. </li>
+       <li data-en="Changed the mounting method: more sturdy and  less vibrations across the robot." data-fr="Changement de la méthode de montage : plus robuste et moins de vibrations sur le robot. "> Changed the mounting method: more sturdy and  less vibrations across the robot. </li> 
+        <li data-en="2. Installing a perfect semi circle wall for the launcher came with it’s difficulties." data-fr="2. L'installation d'un mur en demi-cercle parfait pour le lanceur n'a pas été sans difficultés."> 2. Installing a perfect semi circle wall for the launcher came with it’s difficulties.</li> 
+    <li data-en="We installed a working plexiglass wall after 2 different tries." data-fr="Nous avons installé un mur de plexiglas fonctionnel après deux tentatives."> We installed a working plexiglass wall after 2 different tries. </li>
+       <li data-en="3. The suction effect that the high RPM fly would cause against the flywheel " data-fr="3. L'effet de succion que la mouche à haut régime provoquerait contre le volant d'inertie. "> 3. The suction effect that the high RPM fly would cause against the flywheel </li>
+        <li data-en="Resolved by cutting out a hole the size of the flywheel right under its original mounting position." data-fr="Résolu en découpant un trou de la taille du volant d'inertie juste sous sa position de montage d'origine."> Resolved by cutting out a hole the size of the flywheel right under its original mounting position.</li>
+
+  </div>
+</div>
+</div>
+
+</div>
+<script>
+      let language = 'en';
+
+      function toggleLanguage() {
+          language = (language === 'en') ? 'fr' : 'en';
+          document.querySelectorAll('[data-en]').forEach(element => {
+              element.innerText = element.getAttribute(`data-${language}`);
+          });
+      }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conception</title>
+    <style>
+        @font-face {
+            font-family: 'BatmanForever';
+            src: url('batman_forever/batmfa__.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background-color: #0D0D0D;
+            color: #FFD700;
+            font-family: 'BatmanForever', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            background: #222;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #FFD700;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .rule {
+            background: #1A1A1A;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 5px solid #FFD700;
+        }
+
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .language-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(10, 20, 40, 0.9);
+            color: cyan;
+            border: 2px solid cyan;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+            box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.8);
+            font-family: 'BatmanForever', sans-serif;
+        }
+
+        .language-toggle:hover {
+            background: rgba(0, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+   
+    <div class="navbar">
+        <button class="language-toggle" onclick="toggleLanguage()"data-en="French" data-fr="Anglais">French</button>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <h1 data-en="Conception" data-fr="Conception">Conception</h1>
+    </header>
+    
+    <!-- Navigation Menu -->
+    <nav>
+    <a href="home.html" data-en="Home" data-fr="Accueil">Home</a>
+    <a href="team.html" data-en="Our Team" data-fr="Notre équipe">Our Team</a>
+    <a href="comp-progress.html" data-en="Component Progress" data-fr="Progrès des composants">Component Progress</a>
+    <a href="rules.html" data-en="Rules" data-fr="Règles">Rules</a>
+    <a href="credits.html" data-en="Credits" data-fr="Crédits">Credits</a>
+</nav>
+
+    <section id="rules">
+        <div class="rule">
+            <h3 style="color: rgb(28, 163, 186);" data-en="Electronics & Weight Distribution" data-fr="Électronique et répartition du poids"> Electronics & Weight Distribution</h3>
+            <p1 style="border: 1px solid rgb(28, 163, 186); color: beige;" data-en="Electronics" data-fr="Électronique">Electronics</p1>
+            <li data-en="Securely mounted onto a sheet of polycarbonate behind the robot with easy access to the kill switch and Crcduino." data-fr="Monté en toute sécurité sur une feuille de polycarbonate derrière le robot avec un accès facile à l'interrupteur d'arrêt et au CRCduino.">  Securely mounted onto a sheet of polycarbonate behind the robot with easy access to the kill switch and Crcduino.</li>
+            <p1 style="border: 1px solid rgb(28, 163, 186); color: beige;">Battery</p1>
+            <li data-en="Placed on end of robot base/frame to counterweight components such as the lead screw lift system which are located at the front." data-fr="Placé à l'extrémité de la base/du cadre du robot pour contrebalancer les composants tels que le système de levage à vis sans fin qui sont situés à l'avant."> Placed on end of robot base/frame to counterweight components such as the lead screw lift system which are located at the front. </li>
+       
+        </div> 
+        <div class="rule">
+            <h3 style="color: rgb(28, 163, 186);" data-en="Drive Systems" data-fr="Systèmes de conduite">Drive Systems</h3>
+            <p1 style="border: 1px solid rgb(28, 163, 186); color: beige;" data-en="Current Drive System" data-fr="Système de conduite actuel">Current Drive System</p1>
+            <li data-en="Shown in the 3D design: our first iteration." data-fr="Illustration de la conception en 3D: notre première itération.">Shown in the 3D design: our first iteration.</l1>
+          <li data-en="Powered by high speed and torque BaneBot motor (allows robot to easily maneuver the field.)" data-fr="Alimenté par un moteur BaneBot à haute vitesse et à couple élevé (permettant au robot de manœuvrer facilement sur le terrain).">Powered by high speed and torque BaneBot motor (allows robot to easily maneuver the field.)</li>
+          <p1 style="border: 1px solid rgb(28, 163, 186); color: beige;" data-en="BaneBot Motors" data-fr="Moteurs Banebot">BaneBot Motors</p1>
+                <li data-en="Mounted rigidly onto base with sprockets" data-fr="Montage rigide sur la base à l'aide de pignons">Mounted rigidly onto base with sprockets</li>
+               <li data-en="Each sprocket comes with a chain drive directly powering each wheel, giving us a 4 wheel drive." data-fr="Chaque pignon est équipé d'une chaîne de transmission qui alimente directement chaque roue, ce qui nous permet d'avoir 4 roues motrices."> Each sprocket comes with a chain drive directly powering each wheel, giving us a 4 wheel drive. </li>
+               <p1 style="border: 1px solid rgb(28, 163, 186); color: beige;" data-en="Final Drive System" data-fr="Système de transmission finale">Final Drive System</p1>
+              <li data-en="Changed to a gobilda yellow jacket bevel gear mechanism" data-fr="Remplacé par un mécanisme à engrenage conique gobilda yellow jacket">Changed to a gobilda yellow jacket bevel gear mechanism </li>
+              <li data-en="Easier replacement of parts" data-fr="Remplacement plus facile des pièces">Easier replacement of parts</li>
+              <li data-en="More reliable" data-fr="Plus fiable">More reliable</li>
+              <li data-en="Compatibile with arduino code" data-fr="Compatible avec le code arduino">Compatibile with arduino code</li>
+
+        </div>
+        <div class="rule">
+            <h3 style="color: rgb(28, 163, 186);" data-en="Screw Lift" data-fr="Vis de levage"> Screw Lift</h3>
+            <p1 style="border: 1px solid rgb(28, 163, 186); color: beige;" data-en="Lead Screw Mechanisms" data-fr="Mécanismes de la vis-mère"> Lead Screw Mechanisms</p1>
+            <li data-en="Powered by a gobilda yellow jacket motor: allows claw and other components of pick-up system to translate upward and downward" data-fr="Alimenté par un moteur gobilda yellow jacket: permet à la griffe et aux autres composants du système de ramassage de se déplacer vers le haut et vers le bas.">Powered by a gobilda yellow jacket motor: allows claw and other components of pick-up system to translate upward and downward</li>
+            <li data-en="Easy access to game pieces and loading to the launching system." data-fr="Accès facile aux pièces de jeu et au chargement du système de lancement.">Easy access to game pieces and loading to the launching system.</li>
+
+        </div>
+        <div class="rule">
+            <h3 style="color: rgb(28, 163, 186);" data-en="Launching System" data-fr="Système de lancement"> Launching System</h3>
+            <li data-en="Made up of 2 main parts:" data-fr="Il se compose de deux parties principales:"> Made up of 2 main parts:</li>
+            <li style="border: 1px solid rgb(28, 163, 186); color: beige;" data-en="Guiding Parabole (walls)" data-fr="Guide Parabole (murs)"> Guiding Parabole (walls) </li>
+            <li style="border: 1px solid rgb(28, 163, 186); color: beige;" data-en="High RPM flywheel (powered by a gobilda yellow jacket motor)" data-fr="Volant d'inertie à haut régime (alimenté par un moteur gobilda yellow jacket)"> High RPM flywheel (powered by a gobilda yellow jacket motor)</li>
+            <li data-en="Funnels game pieces from claw after pick-up and, one at a time, shoots them to the desired distance" data-fr="Fait sortir les pièces de jeu de la griffe après les avoir ramassées et les lance, une à la fois, à la distance voulue."> Funnels game pieces from claw after pick-up and, one at a time, shoots them to the desired distance </p2>
+            <li data-en="Shoots at a 45 degree angle thanks to the flywheel to achieve a landing on the center post." data-fr="Tire à un angle de 45 degrés grâce au volant d'inertie qui permet d'atterrir sur le poteau central."> Shoots at a 45 degree angle thanks to the flywheel to achieve a landing on the center post.</li>
+            
+        </div>
+        <div class="rule">
+            <h3 style="color: rgb(28, 163, 186);" data-en="The Claw" data-fr="La griffe"> The Claw</h3>
+        <li data-en="Made up 3 different main parts: the stable finger, the moving finger and the flip system." data-fr="Composé de 3 parties principales différentes : le doigt stable, le doigt mobile et le système de bascule."> Made up 3 different main parts: the stable finger, the moving finger and the flip system. </li>
+        <li data-en="Claw itself is a rack and pinion mechanism" data-fr="La griffe elle-même est un mécanisme à crémaillère."> Claw itself is a rack and pinion mechanism</li>
+        <li data-en="3D printed claw: designed in a way that it can easily access all dispensers on the playing field & drop one gp at a time into the launching system, even if it is holding multiple." data-fr="Griffe imprimée en 3D: conçue de manière à pouvoir accéder facilement à tous les distributeurs sur le terrain de jeu et déposer un gp à la fois dans le système de lancement, même s'il en contient plusieurs."> 3D printed claw: designed in a way that it can easily access all dispensers on the playing field & drop one gp at a time into the launching system, even if it is holding multiple. </li>
+        <p1 style="border: 1px solid rgb(28, 163, 186); color: beige;" data-en="Stable Finger" data-fr="Doigt stable">Stable Finger</p1>
+        <li data-en="Made up of a circular 3D printed part: holds up to 3 game pieces at a time" data-fr="Composé d'une pièce circulaire imprimée en 3D: peut contenir jusqu'à 3 pièces de jeu à la fois">Made up of a circular 3D printed part: holds up to 3 game pieces at a time </li>
+        <p1 style="border: 1px solid rgb(28, 163, 186); color: beige;" data-en="Moving Finger" data-fr="Doigt mobile">Moving Finger</p1>
+        <li data-en="Extends outward and pushes gp’s into the stable finger (all powered by a high torque servo motor.)" data-fr="S'étend vers l'extérieur et pousse les gp dans le doigt stable (le tout actionné par un servo-moteur à couple élevé).">Extends outward and pushes gp’s into the stable finger (all powered by a high torque servo motor.) </li>
+        <p1 style="border: 1px solid rgb(28, 163, 186); color: beige;" data-en="Flip System" data-fr="Système Flip">Flip System</p1>
+        <li data-en="Midpoint between claw and lift mechanism" data-fr="Point médian entre la griffe et le mécanisme de levage"> Midpoint between claw and lift mechanism</li>
+        <li data-en="Mounted onto lead screw and attached to the claw: allows it to rotate the claw a full 360 degrees either way" data-fr=" Monté sur une vis-mère et fixé à la griffe : permet de faire pivoter la griffe de 360 degrés dans un sens ou dans l'autre."> Mounted onto lead screw and attached to the claw: allows it to rotate the claw a full 360 degrees either way </li>
+        <li data-en="Dispenses gp’s into the launching mechanism smoothly." data-fr="Distribue les gp's dans le mécanisme de lancement en douceur."> Dispenses gp’s into the launching mechanism smoothly.</li>
+            
+        </div>
+    </section>
+
+   
+    <footer >
+        <p data-en="Do not hesitate to refer to the CRC website for further explanations on the rulebook." data-fr="N'hésitez pas à consulter le site web du CRC pour plus d'explications sur le règlement.">Do not hesitate to refer to the CRC website for further explanations on the rulebook.</p>
+    </footer>
+  
+    <script>
+        let language = 'en';
+  
+        function toggleLanguage() {
+            language = (language === 'en') ? 'fr' : 'en';
+            document.querySelectorAll('[data-en]').forEach(element => {
+                element.innerText = element.getAttribute(`data-${language}`);
+            });
+        }
+  </script>
+
+</body>
+</html>

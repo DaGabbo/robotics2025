@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        @font-face {
+            font-family: 'BatmanForever';
+            src: url('batman_forever/batmfa__.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background-color: #0D0D0D;
+            font-family: 'BatmanForever', sans-serif;
+            background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2bda9881-73c4-4475-9d1a-41321879ce7d/dg5fky2-2cc397e9-02b9-40e9-841d-ff5ff06f5e4f.png/v1/fill/w_1280,h_720,q_80,strp/batcomputer_hud_wallpaper_by_vincemendneck_dg5fky2-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvMmJkYTk4ODEtNzNjNC00NDc1LTlkMWEtNDEzMjE4NzljZTdkXC9kZzVma3kyLTJjYzM5N2U5LTAyYjktNDBlOS04NDFkLWZmNWZmMDZmNWU0Zi5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.HjADh1NJ5aYe8FI2QQGL5_AS9WDzbQbPca3Eu3UspUA');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .navbar {
+            
+            display: flex;
+            justify-content: space-around;
+            background-color: rgba(0, 20, 40, 0.9);
+            border-bottom: 2px solid cyan;
+            padding: 1.5vh 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .navbar a {
+            color: cyan;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 2vh;
+            transition: color 0.3s, transform 0.3s;
+            padding: 0.5vh 1vw;
+        }
+
+        .navbar a:hover {
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .window {
+            background: rgba(10, 20, 40, 0.9);
+            width: 200vw;
+            height: 200vw;
+            max-width: 280px;
+            max-height: 280px;
+            min-width: 280px;
+            min-height: 280px;
+            box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.8);
+            overflow: hidden;
+            border: 1px solid cyan;
+            position: absolute;
+            transition: transform 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+        }
+        .window:hover {
+            transform: scale(1.1);
+        }
+        .window-header {
+            background: rgba(0, 100, 160, 0.9);
+            padding: 1vh;
+            color: rgb(140, 193, 193);
+            
+            font-size: 1vw;
+            display: flex;
+            
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            border-bottom: 1px solid cyan;
+            text-decoration: none
+        }
+        .window-content {
+            padding: 1vh;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+        .window-content a {
+            text-decoration: none;
+            color: cyan;
+            padding: 1vh;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .window-content a:hover {
+            background: rgba(0, 255, 255, 0.3);
+        }
+        /* Positioning the windows dynamically */
+        .window:nth-child(1) { top: 10%; left: 5%; }
+        .window:nth-child(2) { top: 10%; right: 5%; }
+        .window:nth-child(3) { bottom: 10%; right: 10%; }
+        .window:nth-child(4) { bottom: 10%; left: 10%;  }
+        .window:nth-child(5) { bottom: 52%; left: 5%;  }
+        /* Responsive Bottom Bar */
+        .taskbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 8vh;
+            background: rgba(10, 20, 40, 0.9);
+            border-top: 2px solid cyan;
+            display: flex;
+            align-items: center;
+            padding: 0 1vw;
+        }
+        .taskbar .app {
+            width: 6vh;
+            height: 6vh;
+            margin: 1vh;
+            background: cyan;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: black;
+            cursor: pointer;
+            transition: transform 0.2s;
+            font-size: 2vh;
+        }
+        .taskbar .app:hover {
+            transform: scale(1.2);
+        }
+        .language-toggle {
+            font-family: 'BatmanForever', sans-serif;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(10, 20, 40, 0.9);
+            color: cyan;
+            border: 2px solid cyan;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+            box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.8);
+        }
+
+        .language-toggle:hover {
+            background: rgba(0, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+        .quiz {
+            font-family: 'BatmanForever', sans-serif;
+            position: center;
+            top: 600px;
+            background: rgba(10, 20, 40, 0.9);
+            color: cyan;
+            border: 2px solid cyan;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+            box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.8);
+        }
+        .credits {
+            font-family: 'BatmanForever', sans-serif;
+            position: fixed;
+            left: 10px;
+            bottom: 10px;
+            background: rgba(10, 20, 40, 0.9);
+            color: cyan;
+            border: 2px solid cyan;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+            box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="navbar">
+        <button class="quiz" data-en="WHICH BATMAN CHARACTER ARE YOU? QUIZ" data-fr="QUIZ DE QUEL PERSONNAGE DE BATMAN ES-TU?"><a href="quiz.html">WHICH BATMAN CHARACTER ARE YOU? QUIZ</a></button>
+
+        <button class="language-toggle" onclick="toggleLanguage()" data-en="French" data-fr="Anglais">French</button>
+    </div>
+    
+
+    <div class="window">
+        <a href="conception.html"><div class="window-header" data-en="Conception" data-fr="Conception">Conception</div></a>
+        <div class="window-content"></div>
+    </div>
+    <div class="window">
+        <a href="comp-progress.html"><div class="window-header" data-en="Component Progress" data-fr="Progrès Des Composantes">Component Progress</div></a>
+        <div class="window-content"></div>
+    </div>
+    <div class="window">
+        <a href="rules.html"><div class="window-header" data-en="Game Rules" data-fr="Règles Du Jeu">Game Rules</div></a>
+        <div class="window-content"></div>
+    </div>
+    <div class="window">
+        <a href="team.html"><div class="window-header" data-en="Our Team" data-fr="Notre Équipe">Our Team</div></a>
+        <div class="window-content"></div>
+    </div>
+
+    <button class="credits" data-en="Credits" data-fr="Crédits"><a href="credits.html">Credits</a></button>
+    <script>
+        let language = 'en';
+
+        function toggleLanguage() {
+            language = (language === 'en') ? 'fr' : 'en';
+            document.querySelectorAll('[data-en]').forEach(element => {
+                element.innerText = element.getAttribute(`data-${language}`);
+            });
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Team!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #0a0a0a;
+            color: #f4f4f4;
+        }
+        .team-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 50px auto;
+            max-width: 1000px;
+        }
+        .team-member {
+            background: #1c1c1c;
+            margin: 30px;  /* Increased margin for more separation */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 0, 0.8);
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        .team-member:hover {
+            transform: scale(1.05);  /* Slight scaling effect for the box */
+        }
+        .team-member img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgb(0, 187, 255);
+            transition: transform 0.3s ease-in-out;  /* Smooth transition for image */
+        }
+        .team-member:hover img {
+            transform: scale(1.0);  /* Image expands when the box is hovered */
+        }
+        h1 {
+            margin-top: 20px;
+            color: rgb(0, 242, 255);
+            font-family: 'Arial Black', sans-serif;
+            text-shadow: 3px 3px 5px rgba(0, 217, 255, 0.8);
+        }
+        h2, p {
+            color: #f4f4f4;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #1c1c1c;
+            border: 2px solid #00bbff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 0, 0.8);
+            color: #f4f4f4;
+            width: 1000px;
+            max-width: 90%;
+            z-index: 1000;
+            padding: 20px;
+            text-align: left;
+        }
+        .popup img {
+        
+            max-width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            object-fit: cover;
+            float: left;
+            margin-right: 20px;
+        }
+        .popup .close-btn {
+            display: block;
+            text-align: right;
+            color: red;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+        }
+        .popup-image-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .popup-image-container img {
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        #popup-img {
+            width: 300px;
+            height: 300px;
+            z-index: 1;
+        }
+
+        .overlay-img-1 {
+            position: absolute;
+            bottom: 0px;
+            right: -40px;
+            width: 110px;
+            max-height: 110px;
+            transform: rotate(20deg);
+            border-radius: 0;
+            z-index: 2;
+        }
+
+        .overlay-img-2 {
+            position: absolute;
+            bottom: 0px;
+            right: 200px;
+            width: 100px;
+            max-height: 100px;
+            transform: rotate(-15deg);
+            border-radius: 0;
+            z-index: 3;
+        }
+    </style>
+    <script>
+        function showPopup(name, role, imageUrl, overlay1, overlay2) {
+            document.getElementById('popup-name').innerText = name;
+            document.getElementById('popup-role').innerText = role;
+            document.getElementById('popup-img').src = imageUrl;
+            document.querySelector('.overlay-img-1').src = overlay1;
+            document.querySelector('.overlay-img-2').src = overlay2;
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <h1>Our Team</h1>
+    <div class="team-container">
+        <div class="team-member" onclick="showPopup('Zachary Stewart', 'role: Co-captain and Club representative. something cool about me: ', 'https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/19718173/Batman_Adventures_Continue_Cv1_Dave_Johnson.jpg?quality=90&strip=all&crop=0,16.135144198524,100,44.444444444444', 'https://static.wikia.nocookie.net/batmantheanimatedseries/images/3/33/On_Leather_Wings_36_-_Batman.jpg', 'https://i0.wp.com/thenerdsofcolor.org/wp-content/uploads/2014/06/d1b2c-batman1.png')">
+            <img src="https://static.wikia.nocookie.net/batmantheanimatedseries/images/4/46/BTAS.png" alt="Team Member">
+            <h2>Zachary Stewart</h2>
+            <p>BATMAN</p>
+        </div>
+        <div class="team-member" onclick="showPopup('Adih Verma', 'I am indian', 'https://clampettstudio.com/cdn/shop/products/IFA9995JokerOPConPrintedBG_Harlequinade.jpg', 'https://legendary-digital-network-assets.s3.amazonaws.com/wp-content/uploads/2019/04/13115452/maxresdefault-1-1.jpg', 'https://i.pinimg.com/736x/fd/61/e3/fd61e3d2b1d1f92f4cd87e61fbe520f8.jpg')">
+            <img src="https://static.wikia.nocookie.net/marvel_dc/images/a/ad/Joker_DCAU_02.jpg" alt="Team Member" width="50" 
+            height="50" />
+            <h2>Adih Verma</h2>
+            <p>(The Joker)</p>
+        </div>
+        <div class="team-member" onclick="showPopup('Adih Verma', 'I am indian', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlLlrHpj71IoBRFKvgfldH677XhvXF16OwMKLH7cPXbWqcXoolRzeG0e6UKPWbwEiOsGQ&usqp=CAU', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg')">
+            <img src="https://i.ytimg.com/vi/fXH_nfYhUII/maxresdefault.jpg" alt="Team Member">
+            <h2>Adih Verma</h2>
+            <p>(The Penguin)</p>
+        </div>
+        <div class="team-member" onclick="showPopup('Charlie Konisberg', 'I am cool', 'https://choicefineart.com/cdn/shop/products/the-new-batman-adventures-original-production-cel-robin-289831.jpg?v=1688083469', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg')">
+            <img src="https://cdn.mos.cms.futurecdn.net/FaGz9btjGer2JrPuvyrh2C.jpg" alt="Team Member">
+            <h2>Charlie Konisberg</h2>
+            <p>(Robin)</p>
+        </div>
+        <div class="team-member" onclick="showPopup('Chase Engel', 'TOTALLY MOST USEFUL PERSON IN ROBOTICS', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg', 'https://i0.wp.com/batman-news.com/wp-content/uploads/2015/03/Two-FaceTimm.jpg', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg')">
+            <img src="https://thepenskyfile.com/wp-content/uploads/2018/09/SB_P1_68_-_Two-Face.jpg" alt="Team Member">
+            <h2>Chase Engel</h2>
+            <p>(Two-Face)</p>
+        </div>
+        <div class="team-member" onclick="showPopup('Poison Ivy', 'Bella', 'https://choicefineart.com/cdn/shop/products/batman-the-animated-series-original-production-cel-on-original-background-poison-ivy-112818_800x.jpg?v=1688078344', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg' )">
+            <img src="https://choicefineart.com/cdn/shop/products/batman-the-animated-series-original-production-cel-on-original-background-poison-ivy-112818_800x.jpg?v=1688078344" alt="Team Member">
+            <h2>Bella Gregory</h2>
+            <p>(Poison Ivy)</p>
+        </div>
+        <div class="team-member" onclick="showPopup('Scarecrow', 'AKA Paul', 'https://choicefineart.com/cdn/shop/products/the-new-batman-adventures-original-production-cel-on-original-background-scarecrow-780478.jpg', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg')">
+            <img src="https://www.slashfilm.com/img/gallery/batman-the-animated-series-recruited-a-b-movie-legend-for-scarecrows-redesign/intro-1696095190.jpg" alt="Team Member">
+            <h2>Scarecrow</h2>
+            <p>AKA Paul</p>
+        </div>
+        <div class="team-member" onclick="showPopup('Jonah Gurevitch', '(Alfred)', 'https://static.wikia.nocookie.net/batmantheanimatedseries/images/2/2a/NN_08_-_Alfred.jpg', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbHPXnCorOsu8C5-5ZYgmWNtu-BfcLNBpSmg&s" alt="Team Member">
+            <h2>Jonah Gurevitch</h2>
+            <p>(Alfred)</p>
+        </div>
+        <div class="team-member" onclick="showPopup('Killercroc', 'AKA John', 'https://upload.wikimedia.org/wikipedia/en/5/5c/Killer_Croc.png', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg')">
+            <img src="https://upload.wikimedia.org/wikipedia/en/5/5c/Killer_Croc.png" alt="Team Member">
+            <h2>Killercroc</h2>
+            <p>(Killercroc)n</p>
+        </div>
+        <div class="team-member" onclick="showPopup('Nicolas Azar', 'je suis francais oui oui baguette', 'https://i.redd.it/637zofj8vfh71.jpg', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg')">
+            <img src="https://i.redd.it/637zofj8vfh71.jpg" alt="Team Member">
+            <h2>Nicolas Azar</h2>
+            <p>(Mr.Freeze)</p>
+        </div>
+        <div class="team-member" onclick="showPopup('Melissa Falbo', '(Harley Quinn)', 'https://m.media-amazon.com/images/M/MV5BNjlhMGQ3YmQtNzYwNy00YTk5LWI4ZTYtYmE5YjFiZDA4ZWYyXkEyXkFqcGc@._V1_.jpg', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg')">
+            <img src="https://m.media-amazon.com/images/M/MV5BNjlhMGQ3YmQtNzYwNy00YTk5LWI4ZTYtYmE5YjFiZDA4ZWYyXkEyXkFqcGc@._V1_.jpg" alt="Team Member">
+            <h2>Melissa Falbo</h2>
+            <p>(Harley Quinn)</p>
+        </div>
+        <div class="team-member" onclick="showPopup('Julian McMahon', '(The riddler)', 'https://m.media-amazon.com/images/M/MV5BYmYxMzBmNjItYmFkNS00NWE0LWE3N2EtNzUwMTgzNjhlY2QzXkEyXkFqcGc@._V1_.jpg', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg')">
+            <img src="https://static.wikia.nocookie.net/batmantheanimatedseries/images/8/8f/SR_36_-_Riddler.jpg" alt="Team Member">
+            <h2>Julian McMahon</h2>
+            <p>(The riddler)</p>
+        </div>
+        <div class="team-member" onclick="showPopup('Sofia Mazareanu', '(Catwoman)', 'https://i.ytimg.com/vi/YpCPuyFEODA/sddefault.jpg', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg')">
+            <img src="https://i.ytimg.com/vi/YpCPuyFEODA/sddefault.jpg" alt="Team Member">
+            <h2>Sofia Mazareanu</h2>
+            <p>(Catwoman)</p>
+        </div>
+        <div class="team-member" onclick="showPopup('Boxiong Liu', 'I know its the biggest youve ever seen', 'https://m.media-amazon.com/images/M/MV5BYTZmYjM3YzctMGRkZC00MmQwLWI0YmYtYjc5NjNkODQ1Mjc2XkEyXkFqcGc@._V1_.jpg', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg', 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg')">
+            <img src="https://dcanimated.com/WF/batman/btas/bios/bane/08.jpg" alt="Team Member" width="50" 
+            height="50" />
+            <h2>Boxiong Liu</h2>
+            <p>(Bane)</p>
+        </div>
+        
+    </div>
+    <div id="overlay" class="overlay" onclick="closePopup()"></div>
+    <div id="popup" class="popup">
+        <div class="close-btn" onclick="closePopup()">X</div>
+        <div class="popup-image-container">
+            <img id="popup-img" src="" alt="Member Photo">
+            <img class="overlay-img-1" src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg" alt="Overlay 1">
+            <img class="overlay-img-2" src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/11/two-face.jpeg" alt="Overlay 2">
+       
+        </div>
+        <div>
+            <h2 id="popup-name"></h2>
+            <p id="popup-role"></p>
+        </div>
+    </div>
+</body>
+</html>
+https://i.pinimg.com/736x/97/12/d1/9712d1880e8f1cd002875392e662f268.jpg
+https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2bda9881-73c4-4475-9d1a-41321879ce7d/df7wi5k-dccfc601-9036-48a4-a58b-f8097e8a4f6c.jpg/v1/fill/w_1280,h_540,q_75,strp/batcomputer_minimalistic_wallpaper_by_vincemendneck_df7wi5k-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTQwIiwicGF0aCI6IlwvZlwvMmJkYTk4ODEtNzNjNC00NDc1LTlkMWEtNDEzMjE4NzljZTdkXC9kZjd3aTVrLWRjY2ZjNjAxLTkwMzYtNDhhNC1hNThiLWY4MDk3ZThhNGY2Yy5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.B814QyQHgsfgP8KXgO4Q9IeGPH6wAqJjoJJOdQkZ76g
