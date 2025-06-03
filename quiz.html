@@ -4,8 +4,14 @@
   <meta charset="UTF-8">
   <title>Which Batman Character Are You?</title>
   <style>
+    @font-face {
+            font-family: 'BatmanForever';
+            src: url('batman_forever/batmfa__.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'BatmanForever', sans-serif;
       background-color: #1e1e1e;
       color: #f5f5f5;
       max-width: 800px;
@@ -13,14 +19,17 @@
       padding: 20px;
     }
     h1 {
+      font-family: 'BatmanForever', sans-serif;
       text-align: center;
       color: #ffc107;
     }
     .question-title {
+      font-family: 'BatmanForever', sans-serif;
       font-weight: bold;
       margin-bottom: 5px;
     }
     button {
+      font-family: 'BatmanForever', sans-serif;
       display: block;
       margin: 30px auto;
       padding: 10px 25px;
@@ -30,10 +39,12 @@
       cursor: pointer;
     }
     button:hover {
+      font-family: 'BatmanForever', sans-serif;
       background-color: #ffa000;
     }
     /* Modal Styles */
     .modal {
+      font-family: 'BatmanForever', sans-serif;
       display: none;
       position: fixed;
       top: 0;
@@ -45,38 +56,40 @@
       padding-top: 50px;
     }
     .modal-content {
+      font-family: 'BatmanForever', sans-serif;
       background-color: #333;
       color: #f5f5f5;
       margin: auto;
       padding: 20px;
       width: 80%;
-      max-width: 500px;
+      max-width: 700px;
       border-radius: 8px;
     }
     .modal-content button {
+      font-family: 'BatmanForever', sans-serif;
       background-color: #ffc107;
       margin: 10px;
     }
     .modal-content button:hover {
+      font-family: 'BatmanForever', sans-serif;
       background-color: #ffa000;
     }
   </style>
 </head>
 <body>
 
-<h1>Which Batman Character Are You?</h1>
 
 <!-- Modals for Each Question -->
 <div id="modal1" class="modal">
   <div class="modal-content">
     <div class="question-title">1. How do you solve problems?</div>
-    <label><input type="radio" name="q1" value="10"> Strategically</label><br>
+    <label><input type="radio" name="q1" value="10"> With patience</label><br>
     <label><input type="radio" name="q1" value="20"> With chaos</label><br>
     <label><input type="radio" name="q1" value="15"> With charm</label><br>
     <label><input type="radio" name="q1" value="18"> With intellect</label><br>
     <label><input type="radio" name="q1" value="16"> With spontaneity</label><br>
     <label><input type="radio" name="q1" value="14"> With passion</label><br>
-    <label><input type="radio" name="q1" value="12"> With wisdom</label><br>
+    <label><input type="radio" name="q1" value="12"> With strategy</label><br>
     <button onclick="nextQuestion(1)">Next</button>
   </div>
 </div>
@@ -84,13 +97,13 @@
 <div id="modal2" class="modal">
   <div class="modal-content">
     <div class="question-title">2. Choose a weapon:</div>
-    <label><input type="radio" name="q2" value="10"> Batarang</label><br>
+    <label><input type="radio" name="q2" value="10"> Teacup</label><br>
     <label><input type="radio" name="q2" value="20"> Acid flower</label><br>
     <label><input type="radio" name="q2" value="15"> Whip</label><br>
     <label><input type="radio" name="q2" value="18"> Cane</label><br>
     <label><input type="radio" name="q2" value="16"> Mallet</label><br>
     <label><input type="radio" name="q2" value="14"> Vines</label><br>
-    <label><input type="radio" name="q2" value="12"> Teacup</label><br>
+    <label><input type="radio" name="q2" value="12"> Batarang</label><br>
     <button onclick="nextQuestion(2)">Next</button>
     <button onclick="prevQuestion(2)">Previous</button>
   </div>
@@ -100,13 +113,13 @@
 <div id="modal3" class="modal">
   <div class="modal-content">
     <div class="question-title">3. What motivates you most?</div>
-    <label><input type="radio" name="q3" value="10"> Justice</label><br>
+    <label><input type="radio" name="q3" value="10"> Order</label><br>
     <label><input type="radio" name="q3" value="20"> Chaos</label><br>
     <label><input type="radio" name="q3" value="15"> Love</label><br>
     <label><input type="radio" name="q3" value="18"> Curiosity</label><br>
     <label><input type="radio" name="q3" value="16"> Fun</label><br>
     <label><input type="radio" name="q3" value="14"> Nature</label><br>
-    <label><input type="radio" name="q3" value="12"> Loyalty</label><br>
+    <label><input type="radio" name="q3" value="12"> Vengeance</label><br>
     <button onclick="nextQuestion(3)">Next</button>
     <button onclick="prevQuestion(3)">Previous</button>
   </div>
@@ -115,13 +128,13 @@
 <div id="modal4" class="modal">
   <div class="modal-content">
     <div class="question-title">4. Choose a sidekick:</div>
-    <label><input type="radio" name="q4" value="10"> Robin</label><br>
-    <label><input type="radio" name="q4" value="20"> Gag henchmen</label><br>
+    <label><input type="radio" name="q4" value="10"> Butler</label><br>
+    <label><input type="radio" name="q4" value="20"> Psychotic man</label><br>
     <label><input type="radio" name="q4" value="15"> Stray cat</label><br>
     <label><input type="radio" name="q4" value="18"> Puzzle apprentice</label><br>
     <label><input type="radio" name="q4" value="16"> Hyena</label><br>
     <label><input type="radio" name="q4" value="14"> Venus flytrap</label><br>
-    <label><input type="radio" name="q4" value="12"> Butler</label><br>
+    <label><input type="radio" name="q4" value="12"> Robin</label><br>
     <button onclick="nextQuestion(4)">Next</button>
     <button onclick="prevQuestion(4)">Previous</button>
   </div>
@@ -129,14 +142,14 @@
 
 <div id="modal5" class="modal">
   <div class="modal-content">
-    <div class="question-title">5. Pick a Gotham villain:</div>
-    <label><input type="radio" name="q5" value="10"> Joker</label><br>
+    <div class="question-title">5. Pick your nemesis:</div>
+    <label><input type="radio" name="q5" value="10"> Penguin</label><br>
     <label><input type="radio" name="q5" value="20"> Batman</label><br>
     <label><input type="radio" name="q5" value="15"> Penguin</label><br>
     <label><input type="radio" name="q5" value="18"> Two-Face</label><br>
     <label><input type="radio" name="q5" value="16"> Riddler</label><br>
     <label><input type="radio" name="q5" value="14"> Poison Ivy</label><br>
-    <label><input type="radio" name="q5" value="12"> Catwoman</label><br>
+    <label><input type="radio" name="q5" value="12"> Joker</label><br>
     <button onclick="nextQuestion(5)">Next</button>
     <button onclick="prevQuestion(5)">Previous</button>
   </div>
@@ -149,9 +162,9 @@
     <label><input type="radio" name="q6" value="20"> Purple</label><br>
     <label><input type="radio" name="q6" value="15"> Red</label><br>
     <label><input type="radio" name="q6" value="18"> Green</label><br>
-    <label><input type="radio" name="q6" value="16"> Pink</label><br>
-    <label><input type="radio" name="q6" value="14"> Leafy green</label><br>
-    <label><input type="radio" name="q6" value="12"> Navy</label><br>
+    <label><input type="radio" name="q6" value="16"> Yellow</label><br>
+    <label><input type="radio" name="q6" value="14"> Pink</label><br>
+    <label><input type="radio" name="q6" value="12"> Blue</label><br>
     <button onclick="nextQuestion(6)">Next</button>
     <button onclick="prevQuestion(6)">Previous</button>
   </div>
@@ -162,7 +175,7 @@
     <div class="question-title">7. How do you spend your free time?</div>
     <label><input type="radio" name="q7" value="10"> Training</label><br>
     <label><input type="radio" name="q7" value="20"> Pranking</label><br>
-    <label><input type="radio" name="q7" value="15"> Flirting</label><br>
+    <label><input type="radio" name="q7" value="15"> Socializing</label><br>
     <label><input type="radio" name="q7" value="18"> Solving puzzles</label><br>
     <label><input type="radio" name="q7" value="16"> Partying</label><br>
     <label><input type="radio" name="q7" value="14"> Gardening</label><br>
@@ -229,7 +242,7 @@
   <div class="modal-content">
     <h2>Your Batman Character Result:</h2>
     <div class="result" id="finalResult"></div>
-    <a href="home.html"><button>Close</button></a>
+    <button><a href="home.html">Close</a></button>
   </div>
 </div>
 
@@ -284,7 +297,7 @@ function submitQuiz() {
   let resultText = "";
 
   if (total <= 130) {
-    resultText = "You are ALFRED – Loyal, wise, and always calm under pressure.";
+    resultText = "You are ALFRED – Loyal, wise, and always calm under pressure." ;
   } else if (total <= 140) {
     resultText = "You are BATMAN – Disciplined, dark, and driven by justice.";
   } else if (total <= 150) {

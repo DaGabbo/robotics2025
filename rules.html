@@ -58,19 +58,37 @@
             padding: 10px;
             margin-top: 20px;
         }
+        .language-toggle {
+            font-family: 'BatmanForever', sans-serif;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(10, 20, 40, 0.9);
+            color: cyan;
+            border: 2px solid cyan;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+            box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.8);
+        }
+        .language-toggle:hover {
+            background: rgba(0, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
 
-   
-
       <!-- Header Section -->
       <header>
-        <h1>Game Rules</h1>
+        <h1 data-en="Game Rules" data-fr="Règles du jeu">Game Rules</h1>
     </header>
     
     <!-- Navigation Menu -->
     <nav>
+        <button class="language-toggle" onclick="toggleLanguage()"data-en="French" data-fr="Anglais">French</button>
         <a href="home.html" data-en="Home" data-fr="Accueil">Home</a>
         <a href="team.html" data-en="Our Team" data-fr="Notre équipe">Our Team</a>
         <a href="conception.html" data-en="Conception" data-fr="Conception">Conception</a>
@@ -80,42 +98,57 @@
 
     <section id="rules">
         <div class="rule">
-            <h3> GOAL:  Place your game pieces in 1 of the 9 stations. 
+            <h data-en="GOAL:Place your game pieces in 1 of the 9 stations.
+            You can control stations by completing certain conditions! 
+            If you control 3 stations in the same row, column, or diagonal, 
+            you get a multiplier on the points you score in those stations!" data-fr="OBJECTIF:Placez vos pions dans l'une des 9 stations.
+            Vous pouvez contrôler des stations en remplissant certaines conditions! 
+            Si vous contrôlez 3 stations dans la même ligne, colonne ou diagonale, 
+            vous obtenez un multiplicateur sur les points que vous marquez dans ces stations!"> GOAL:Place your game pieces in 1 of the 9 stations.
                 You can control stations by completing certain conditions! 
                 If you control 3 stations in the same row, column, or diagonal, 
                 you get a multiplier on the points you score in those stations!</h3>
         </div>
         <div class="rule">
-            <h3>1. Two starting zones</h3>
-            <p>This year, robots can start in 1 of 2 starting zones of their colour!</p>
+            <h3 data-en="1. Two starting zones" data-fr="1. Deux zones de départ">1. Two starting zones</h3>
+            <p data-en="This year, robots can start in 1 of 2 starting zones of their colour!" data-fr="Cette année, les robots peuvent démarrer dans l'une des deux zones de départ de leur couleur!"> This year, robots can start in 1 of 2 starting zones of their colour!</p>
         </div>
         <div class="rule">
-            <h3>2. Scoring the Points</h3>
-            <p>Each game piece placed in a station earns points. A curling rink is at the heart of the action!</p>
+            <h3 data-en="2. Scoring the Points" data-fr="2. Le décompte des points">2. Scoring the Points</h3>
+            <p data-en="Each game piece placed in a station earns points. A curling rink is at the heart of the action!" data-fr="Chaque pièce de jeu placée dans une station rapporte des points. Une piste de curling est au cœur de l'action !">Each game piece placed in a station earns points. A curling rink is at the heart of the action!</p>
         </div>
         <div class="rule">
-            <h3>3. Stations</h3>
-            <p>The robots will be able to try and control up to 9 stations on the playing field!</p>
+            <h3 data-en="3. Stations" data-fr="3. Stations">3. Stations</h3>
+            <p data-en="The robots will be able to try and control up to 9 stations on the playing field!" data-fr="Les robots pourront essayer de contrôler jusqu'à 9 stations sur le terrain de jeu!">The robots will be able to try and control up to 9 stations on the playing field!</p>
         </div>
         <div class="rule">
-            <h3>4. Bonus Points</h3>
-            <p>Awarded if you own three stations in the same line</p>
+            <h3 data-en="4. Bonus Points" data-fr="4. Points de bonus">4. Bonus Points</h3>
+            <p data-en="Awarded if you own three stations in the same line" data-fr="Attribué si vous possédez trois stations dans la même ligne">Awarded if you own three stations in the same line</p>
         </div>
         <div class="rule">
-            <h3>5. Time</h3>
-            <p>5 minutes per heat!</p>
+            <h3 data-en="5. Time" data-fr="5. L'heure">5. Time</h3>
+            <p data-en="5 minutes per heat!" data-fr="5 minutes par chaleur!">5 minutes per heat!</p>
         </div>
     </section>
 
     <section id="code">
-        <h2>The Bat Code</h2>
-        <p>Be kind, respect others, help others when needed</p>
+        <h2 data-en="The Bat Code" data-fr="Le code de Bat">The Bat Code</h2>
+        <p data-en="Be kind, respect others, help others when needed" data-fr="Être gentil, respecter les autres, aider les autres si nécessaire">Be kind, respect others, help others when needed</p>
     </section>
    
     <footer >
-        <p>Do not hesitate to refer to the CRC website for further explanations on the rulebook.</p>
+        <p data-en="Do not hesitate to refer to the CRC website for further explanations on the rulebook." data-fr="N'hésitez pas à consulter le site web du CRC pour plus d'explications sur le règlement.">Do not hesitate to refer to the CRC website for further explanations on the rulebook.</p>
     </footer>
   
-
+    <script>
+        let language = 'en';
+  
+        function toggleLanguage() {
+            language = (language === 'en') ? 'fr' : 'en';
+            document.querySelectorAll('[data-en]').forEach(element => {
+                element.innerText = element.getAttribute(`data-${language}`);
+            });
+        }
+    </script>
 </body>
 </html>
