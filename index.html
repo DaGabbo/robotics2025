@@ -62,32 +62,6 @@
     .login-btn:hover {
       background-color: #808080;
     }
-
-    .glitch-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: #000;
-      display: none;
-      z-index: 9999;
-      animation: glitch 0.6s linear;
-    }
-
-    @keyframes glitch {
-      0% { clip: rect(0, 100vw, 0, 0); opacity: 1; }
-      10% { clip: rect(10px, 100vw, 60px, 0); }
-      20% { clip: rect(20px, 100vw, 40px, 0); }
-      30% { clip: rect(30px, 100vw, 80px, 0); }
-      40% { clip: rect(40px, 100vw, 20px, 0); }
-      50% { clip: rect(50px, 100vw, 100px, 0); }
-      60% { clip: rect(60px, 100vw, 10px, 0); }
-      70% { clip: rect(70px, 100vw, 90px, 0); }
-      80% { clip: rect(80px, 100vw, 30px, 0); }
-      90% { clip: rect(90px, 100vw, 70px, 0); }
-      100% { clip: rect(100px, 100vw, 0, 0); opacity: 0; }
-    }
   </style>
 </head>
 <body>
@@ -97,10 +71,10 @@
   <div class="login-box">
     <input type="text" value="bruce.wayne" readonly />
     <input type="password" value="IAmBatman123" readonly />
-    <button class="login-btn" onclick="triggerGlitch()">Enter</button>
+    <a href="home.html"><button class="login-btn">Enter</button></a>
   </div>
 
-  <div class="glitch-overlay" id="glitchOverlay"></div>
+
 
   <script>
     function triggerGlitch() {
