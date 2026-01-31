@@ -1,25 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- lines 1-86 AI-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conception</title>
     <style>
-        @font-face {
-            font-family: 'BatmanForever';
-            src: url('batman_forever/batmfa__.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        body {
-            background-color: #0D0D0D;
-            color: #FFD700;
-            font-family: 'BatmanForever', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
         header {
             background-color: #111;
             padding: 20px;
@@ -78,32 +64,25 @@
             background: rgba(0, 255, 255, 0.3);
             transform: scale(1.1);
         }
+        h3 {
+            color: rgb(28, 163, 186);
+        }
     </style>
 </head>
 
 <body>
-   
     <div class="navbar">
-        <button class="language-toggle" onclick="toggleLanguage()"data-en="French" data-fr="Anglais">French</button>
+        <button class="language-toggle" onclick="toggleLanguage()" data-en="French" data-fr="Anglais">French</button>
     </div>
-
     <!-- Header Section -->
     <header>
         <h1 data-en="Conception" data-fr="Conception">Conception</h1>
     </header>
-    
-    <!-- Navigation Menu -->
-    <nav>
-    <a href="home.html" data-en="Home" data-fr="Accueil">Home</a>
-    <a href="team.html" data-en="Our Team" data-fr="Notre équipe">Our Team</a>
-    <a href="comp-progress.html" data-en="Component Progress" data-fr="Progrès des composants">Component Progress</a>
-    <a href="rules.html" data-en="Rules" data-fr="Règles">Rules</a>
-    <a href="credits.html" data-en="Credits" data-fr="Crédits">Credits</a>
 </nav>
 
     <section id="rules">
         <div class="rule">
-            <h3 style="color: rgb(28, 163, 186);" data-en="Electronics & Weight Distribution" data-fr="Électronique et répartition du poids"> Electronics & Weight Distribution</h3>
+            <h3 data-en="Electronics & Weight Distribution" data-fr="Électronique et répartition du poids" > Electronics & Weight Distribution</h3>
             <p1 style="border: 1px solid rgb(28, 163, 186); color: beige;" data-en="Electronics" data-fr="Électronique">Electronics</p1>
             <li data-en="Securely mounted onto a sheet of polycarbonate behind the robot with easy access to the kill switch and Crcduino." data-fr="Monté en toute sécurité sur une feuille de polycarbonate derrière le robot avec un accès facile à l'interrupteur d'arrêt et au CRCduino.">  Securely mounted onto a sheet of polycarbonate behind the robot with easy access to the kill switch and Crcduino.</li>
             <p1 style="border: 1px solid rgb(28, 163, 186); color: beige;">Battery</p1>
@@ -111,7 +90,7 @@
        
         </div> 
         <div class="rule">
-            <h3 style="color: rgb(28, 163, 186);" data-en="Drive Systems" data-fr="Systèmes de conduite">Drive Systems</h3>
+            <h3 data-en="Drive Systems" data-fr="Systèmes de conduite">Drive Systems</h3>
             <p1 style="border: 1px solid rgb(28, 163, 186); color: beige;" data-en="Current Drive System" data-fr="Système de conduite actuel">Current Drive System</p1>
             <li data-en="Shown in the 3D design: our first iteration." data-fr="Illustration de la conception en 3D: notre première itération.">Shown in the 3D design: our first iteration.</l1>
           <li data-en="Powered by high speed and torque BaneBot motor (allows robot to easily maneuver the field.)" data-fr="Alimenté par un moteur BaneBot à haute vitesse et à couple élevé (permettant au robot de manœuvrer facilement sur le terrain).">Powered by high speed and torque BaneBot motor (allows robot to easily maneuver the field.)</li>
@@ -126,14 +105,14 @@
 
         </div>
         <div class="rule">
-            <h3 style="color: rgb(28, 163, 186);" data-en="Screw Lift" data-fr="Vis de levage"> Screw Lift</h3>
+            <h3  data-en="Screw Lift" data-fr="Vis de levage"> Screw Lift</h3>
             <p1 style="border: 1px solid rgb(28, 163, 186); color: beige;" data-en="Lead Screw Mechanisms" data-fr="Mécanismes de la vis-mère"> Lead Screw Mechanisms</p1>
             <li data-en="Powered by a gobilda yellow jacket motor: allows claw and other components of pick-up system to translate upward and downward" data-fr="Alimenté par un moteur gobilda yellow jacket: permet à la griffe et aux autres composants du système de ramassage de se déplacer vers le haut et vers le bas.">Powered by a gobilda yellow jacket motor: allows claw and other components of pick-up system to translate upward and downward</li>
             <li data-en="Easy access to game pieces and loading to the launching system." data-fr="Accès facile aux pièces de jeu et au chargement du système de lancement.">Easy access to game pieces and loading to the launching system.</li>
 
         </div>
         <div class="rule">
-            <h3 style="color: rgb(28, 163, 186);" data-en="Launching System" data-fr="Système de lancement"> Launching System</h3>
+            <h3  data-en="Launching System" data-fr="Système de lancement"> Launching System</h3>
             <li data-en="Made up of 2 main parts:" data-fr="Il se compose de deux parties principales:"> Made up of 2 main parts:</li>
             <li style="border: 1px solid rgb(28, 163, 186); color: beige;" data-en="Guiding Parabole (walls)" data-fr="Guide Parabole (murs)"> Guiding Parabole (walls) </li>
             <li style="border: 1px solid rgb(28, 163, 186); color: beige;" data-en="High RPM flywheel (powered by a gobilda yellow jacket motor)" data-fr="Volant d'inertie à haut régime (alimenté par un moteur gobilda yellow jacket)"> High RPM flywheel (powered by a gobilda yellow jacket motor)</li>
@@ -142,7 +121,7 @@
             
         </div>
         <div class="rule">
-            <h3 style="color: rgb(28, 163, 186);" data-en="The Claw" data-fr="La griffe"> The Claw</h3>
+            <h3 data-en="The Claw" data-fr="La griffe"> The Claw</h3>
         <li data-en="Made up 3 different main parts: the stable finger, the moving finger and the flip system." data-fr="Composé de 3 parties principales différentes : le doigt stable, le doigt mobile et le système de bascule."> Made up 3 different main parts: the stable finger, the moving finger and the flip system. </li>
         <li data-en="Claw itself is a rack and pinion mechanism" data-fr="La griffe elle-même est un mécanisme à crémaillère."> Claw itself is a rack and pinion mechanism</li>
         <li data-en="3D printed claw: designed in a way that it can easily access all dispensers on the playing field & drop one gp at a time into the launching system, even if it is holding multiple." data-fr="Griffe imprimée en 3D: conçue de manière à pouvoir accéder facilement à tous les distributeurs sur le terrain de jeu et déposer un gp à la fois dans le système de lancement, même s'il en contient plusieurs."> 3D printed claw: designed in a way that it can easily access all dispensers on the playing field & drop one gp at a time into the launching system, even if it is holding multiple. </li>
@@ -171,6 +150,7 @@
             document.querySelectorAll('[data-en]').forEach(element => {
                 element.innerText = element.getAttribute(`data-${language}`);
             });
+            
         }
   </script>
 

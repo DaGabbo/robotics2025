@@ -1,0 +1,106 @@
+{
+    "switch_lang":"En",
+    "home_page":"Accueil",
+    "crc_robotics":"CRC Robotique",
+    "team":"Notre Équipe",
+    "conception":"Conception",
+    "comp_progress":"Progrès Des Composantes",
+    "credits":"Crédits",
+    "rules":"Règles Du Jeu",
+    "settings":"Paramètres",
+
+
+    "robot":"Robot",
+    "kiosk":"Kiosque",
+    "video":"Vidéo",
+    "coding":"Codage",
+    "website":"Site web",
+    "mentors":"Mentors",
+    "entire":"L'équipe entière",
+
+    "back_button": "Retour",
+
+    "task":"Quelle est ma contribution? :",
+    "fun_fact":"Fait intéressant :",
+     
+    "kiosk_coe":"Co-capitaine de la division Kiosque",
+    "kiosk_co":"Co-capitain de la division Kiosque",
+    "robot_co":"Co-capitain de la division Robot",
+
+    "kiosk_video":"Kiosque & Vidéo",
+    "robot_video":"Robot & Vidéo",
+    "robot_kiosk":"Robot & Kiosque",
+    "video_tutorial":"Vidéo & Tutoriel",
+
+    "zoe_desc":"J'ai travaillé sur le kiosque et j'ai pris le rôle de Harley Quinn dans la vidéo.",
+    "zoe_fact":"Je suis la meilleure préparatrice de chocolat chaud",
+
+    "julian_desc":"J'ai travaillé uniquement sur la construction du kiosque, en m'occupant à la fois du design et de l'assemblage, et j'ai guidé mon équipe à travers les défis.",
+    "julian_fact":"Je suis extrêmement extraverti et je suis toujours partant pour une conversation. Je serai aussi probablement la personne la plus enthousiaste musicalement que tu rencontreras.",
+
+    "lucas_desc":"J'ai travaillé sur la Batmobile.",
+    "lucas_fact":"J'aime le Basketball et le Hockey.",
+
+    "andy_desc":"J'ai travaillé sur la voiture (Batmobile).",
+
+    "brody_desc":"J'ai contribué à la fabrication de la statue de Batman et j'ai aussi aidé avec la vidéo.",
+    "brody_fact":"Accro au gym.",
+
+    "arthur_desc":"J'ai aidé le kiosque en construisant la Batmobile.",
+
+    "bella_desc":"Je suis la co-capitaine de l'équipe du kiosque et j'ai travaillé sur les murs cette année.",
+    "bella_fact":"Un peu de procrastination est la clé pour créer un kiosque incroyable.",
+
+    "david_desc":"J'ai travaillé sur le kiosque.",
+    "david_fact":"J'aime la nourriture.",
+
+    "cynthia_desc":"J'ai aidé à construire la Batmobile",
+
+    "chase_desc":"Je suis un touche-à-tout. Je fais un peu de tout !",
+    "chase_fact":"Devin est mon ami.",
+
+    "melissa_desc":"J'ai aidé à peindre les murs",
+
+    "zachdeluc_desc":"J'ai travaillé sur le kiosque",
+    "zachdeluc_fact":"J'ai apporté la paix, la liberté, la justice et la sécurité à mon nouvel empire !",
+
+    "marcus_desc":"J'ai aidé à esquisser le kiosque, à couper le bois pour la voiture et à assembler les chaînes pour le robot.",
+
+    "daniel_desc":"J'ai contribué au kiosque",
+    "daniel_fact":"Je sais blaguer.",
+
+    "charlie_desc":"J'ai joué dans la vidéo en incarnant Batman et j'ai aidé à la construction du robot.",
+    "charlie_fact":"Je suis Batman.",
+
+    "mia_desc":"J'ai aidé au kiosque en construisant une machine de pinball sur le thème de Batman et j'ai aussi aidé avec la vidéo.",
+
+    "naman_desc":"J'ai travaillé sur le kiosque avec d'autres élèves de secondaire 1 et 2.",
+    "naman_fact":"Je suis beaucoup plus productif quand je suis censé faire autre chose.",
+
+    "zachvam_desc":"J'ai travaillé sur l'avant de la Batmobile.",
+    "zachvam_fact":"J'aime regarder The Big Bang Theory !",
+
+    "william_desc":"J'ai travaillé sur le kiosque à thème Batman.",
+
+    "george_desc":"Je faisais partie du cours de programmation.",
+    "george_fact":"L'IA n'a aucune chance contre moi quand il s'agit de coder.",
+
+    "dany_desc":"J'ai travaillé sur le kiosque et la Batmobile, et j'ai aussi fait du câblage électrique.",
+    "dany_fact":"J'aime manger parce que c'est amusant.",
+
+    "christian_desc":"Je vais participer à la compétition de programmation !",
+    "christian_fact":"J'ai les pouces hyperlaxes, donc je ne peux pas utiliser de ciseaux.",
+
+    "raphael_desc":"J'ai coupé du bois, construit la voiture Batman et collé les lumières DEL à l'avant de la voiture.",
+
+    "jonah_desc":"J'ai travaillé sur le kiosque (statue de Batman) et aidé avec la vidéo.",
+    "jonah_fact":"Batman n'a pas besoin de GPS — il prend toujours la route du Chevalier Noir 🦇😄 - ChatGPT 2026",
+
+    "box_desc":"J'ai travaillé sur le kiosque en gérant le bois.",
+
+    "mack_desc":"J'ai aidé l'équipe du kiosque avec la construction (ici et là)",
+    "mack_fact":"Je NE SAIS PAS faire la gigue irlandaise.",
+
+    "nicolas_desc":"J'ai incarné le Joker dans la vidéo et j'ai aidé avec le tutoriel.",
+    "nicolas_fact":"J'ai peint mes cheveux en vert avec plaisir et j'ai aussi fait du maquillage blanc."
+}

@@ -1,0 +1,109 @@
+{
+    "switch_lang":"Fr",
+    "home_page":"Home",
+    "crc_robotics":"CRC Robotics",
+    "team":"Our Team",
+    "conception":"Conception",
+    "comp_progress":"Components Progress",
+    "credits":"Credits",
+    "rules":"Rules",
+    "settings":"Settings",
+
+
+    "robot":"Robot",
+    "kiosk":"Kiosk",
+    "video":"Video",
+    "coding":"Coding",
+    "website":"Website",
+    "mentors":"Mentors",
+    "entire":"The Entire Team",
+
+    "back_button": "Back",
+    
+    "task":"What Did I do? :",
+    "fun_fact":"Fun Fact :",
+    
+    "kiosk_coe":"Co-Captain of Kiosk ",
+    "kiosk_co":"Co-Captain of Kiosk",
+    "robot_co":"Co-Captain of Robot",
+    
+    "kiosk_video":"Kiosk & Video",
+    "robot_video":"Robot & Video",
+    "robot_kiosk":"Robot & Kiosk",
+    "video_tutorial":"Video & Tutorial",
+    
+    "zoe_desc":"I worked on kiosk and played Harley Quinn in the video.",
+    "zoe_fact":"Best hot chocolate maker.",
+
+    "julian_desc":"I worked solely on the construction of the kiosk; working on both the design and building aspects and guided my team through challenges.",
+    "julian_fact":"I am incredibly extroverted and im always looking for a conversation. I also will probably be the most musically enthusiastic person you'll meet.",
+
+    "lucas_desc":"I worked on the Batmobile.",
+    "lucas_fact":"I like Basketball and Hockey.",
+
+    "andy_desc":"I worked on the car (Batmobile).",
+
+    "brody_desc":"I contributed in making the Batman statue as well as helped with the video.",
+    "brody_fact":"Gymrat.",
+
+    "arthur_desc":"I helped the kiosk by building the Batmobile.",
+
+    "bella_desc":"I am the co-captain of the kiosk team, and I worked on the walls this year.",
+    "bella_fact":"A little procrastination is key to creating an amazing kiosk.",
+
+    "david_desc":"I worked on the kiosk.",
+    "david_fact":"I like food.",
+
+    "cynthia_desc":"I helped build the Batmobile.",
+
+    "chase_desc":"I am a jack of all trades. I do a little bit of everything!",
+    "chase_fact":"Devin is my Friend.",
+
+    "melissa_desc":"I helped paint the walls.",
+
+    "zachdeluc_desc":"I worked on the kiosk.",
+    "zachdeluc_fact":"I've brought peace, freedom, justice and security to my new empire !",
+
+    "marcus_desc":"I helped sketch the kiosk, helped cut wood for the car and helped assemble the chains for the robot.",
+
+    "daniel_desc":"I contributed to the kiosk.",
+    "daniel_fact":"I can joke around.",
+
+    "charlie_desc":"I acted in the video by being Batman and assisted in the construction of the robot.",
+    "charlie_fact":"I'm batman.",
+
+    "mia_desc":"I helped with the kiosk by building a Batman themed pinball machine as well as helped with the video.",
+
+    "naman_desc":"I worked on the kiosk with other secondary 1's and 2's.",
+    "naman_fact":"I'm way more productive when I'm supposed to be doing something else.",
+
+    "zachvam_desc":"I worked on the front of the Batmobile.",
+    "zachvam_fact":"I like to watch The Big Bang Theory!",
+
+    "william_desc":"Worked on the Batman themed kiosk.",
+
+    "george_desc":"I was part of the programming class.",
+    "george_fact":"AI has nothing on me when it comes to coding.",
+
+    "dany_desc":"I worked in the kiosk and the Batmobile, also did electrical circuitry.",
+    "dany_fact":"I like eating cause it's fun.",
+
+    "christian_desc":"I'm going to be in the programming competition!",
+    "christian_fact":"I'm double jointed on my thumbs so I can't use scissors.",
+
+    "raphael_desc":"Cut wood, built the batman car and stuck the LED lights on the front of the car.",
+
+    "jonah_desc":"Worked on kiosk (Batman statue) and helped with video.",
+    "jonah_fact":"Batman doesn't need a GPS - he always takes the Dark Knight route 🦇😄 - ChatGPT 2026",
+
+    "box_desc":"I worked on the kiosk by managing the wood.",
+
+    "mack_desc":"I helped the kiosk team with the building (here and there).",
+    "mack_fact":"I CANNOT do the irish jig.",
+
+    "nicolas_desc":"I acted as the Joker in the video and I helped with the tutorial.",
+    "nicolas_fact":"I happily painted my hair green as well as did whiteface."
+
+
+
+}

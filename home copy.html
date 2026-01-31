@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="scanlines.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="glitch.css">
+</head>
+
+
+<body class="scanlines">
+    <div class="sidebar" id="sidebar">    
+          </div>
+    <div class="layout-container">
+        
+        <main id="content-main">
+        </main>
+    </div>
+<script src="js/i18n.js"></script>
+<script src="js/site.js"></script>
+<script>
+        // Load saved language or default to English
+        loadLanguage(localStorage.getItem("lang") || "en");
+        loadContent('opening.html','content-main')
+        loadContent('sidebars/home_sidebar.html','sidebar')
+        
+    </script>
+<script>
+function openNav() {
+  document.getElementById("sidebar").style.width = "30vw";
+  document.getElementById("sidebar").style.padding = "1.5vw";
+  document.getElementById("content-main").style.marginLeft = "0px";
+}
+
+function closeNav() {
+  document.getElementById("sidebar").style.width = "0vw";
+  document.getElementById("sidebar").style.padding = "0px";
+  document.getElementById("content-main").style.marginLeft= "0px";
+}
+
+document.addEventListener("mousemove", (e) => {
+  if (e.clientX <= 10) {
+    openNav()
+  }
+  if (e.clientX > window.innerWidth*0.32){
+    closeNav()
+  }
+
+});
+</script>
+<script>
+      let language = 'en';
+
+      function toggleLanguage() {
+          language = (language === 'en') ? 'fr' : 'en';
+          document.querySelectorAll('[data-en]').forEach(element => {
+              element.innerText = element.getAttribute(`data-${language}`);
+          });
+        
+      }
+</script>
+<script>
+var elem = document.documentElement;
+function toggleFullscreen() {
+  if (
+    document.fullscreenElement ||
+    document.webkitFullscreenElement ||
+    document.msFullscreenElement
+  ) {
+    // EXIT fullscreen
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    }
+  } else {
+    // ENTER fullscreen
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) {
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+      elem.msRequestFullscreen();
+    }
+  }
+}
+</script>
+<script>
+function toggleScanlines(){
+  document.body.classList.toggle("scanlines");
+}
+</script>
+</body>
+</html>

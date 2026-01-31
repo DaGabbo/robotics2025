@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- 100% AI-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,7 +76,7 @@
             cursor: pointer;
             transition: transform 0.2s, background 0.3s;
             box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.8);
-            font-family: 'BatmanForever', Arial, sans-serif;
+            font-family: 'BatmanForever', sans-serif;
         }
 
         .language-toggle:hover {
@@ -85,21 +86,15 @@
     </style>
 </head>
 <body>
-
+    <div class="navbar">
+        <button class="language-toggle" onclick="toggleLanguage()" data-en="French" data-fr="Anglais">French</button>
+    </div>
    
 
       <!-- Header Section -->
       <header>
         <h1>Credits</h1>
     </header>
-    <nav>
-        <button class="language-toggle" onclick="toggleLanguage()"data-en="French" data-fr="Anglais">French</button>
-        <a href="home.html" data-en="Home" data-fr="Accueil">Home</a>
-        <a href="team.html" data-en="Our Team" data-fr="Notre équipe">Our Team</a>
-        <a href="conception.html" data-en="Conception" data-fr="Conception">Conception</a>
-        <a href="comp-progress.html" data-en="Component Progress" data-fr="Progrès des composants">Component Progress</a>
-        <a href="rules.html" data-en="Rules" data-fr="Règles">Rules</a>
-    </nav>
     
 
     <section id="rules">

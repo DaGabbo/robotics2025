@@ -1,0 +1,300 @@
+@font-face {
+            font-family: 'BatmanForever';
+            src: url('batman_forever/batmfa__.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+body {
+            background-color: #0D0D0D;
+            background-image: url("batmanhud.png");
+            font-family:'Roboto';
+            color: rgb(93, 235, 233);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+        }
+h1 {
+  font-family: 'BatmanForever', sans-serif;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6vh 5vw;
+            text-decoration: none;
+            font-size: 2.5vw;
+            color: rgb(93, 235, 233);
+            border-bottom: 1.5vh solid rgb(93, 235, 233);
+        }
+h2, h3 {
+  font-family: 'BatmanForever', sans-serif;
+  color: rgb(93, 235, 233);
+  font-size: 1.5vw;
+}
+
+p {
+  
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(93, 235, 233);
+  font-size: 1.5vw;
+  }
+
+@media (max-width: 600px) {
+  .sidebar {
+    width: 160px;
+  }
+}
+/* This holds both the sidebar and the main body */
+.layout-container {
+  display: flex;
+  height: 100vh; /* Makes the layout fill the full screen height */
+}
+
+/* Left Column Styling */
+.sidebar {/* SIDEBAR STARTS SHRUNK*/
+  flex-shrink: 0;  /* So that the sidebar doesnt shrink from its orginal width */
+  font-family: 'BatmanForever', sans-serif;
+  font-size: 2vw;
+  height: 100vh;
+  width: 30vw;     /* Fixed width for the menu */
+  background-color: #1111117a;
+  color: rgb(93, 235, 233);
+  display: flex;
+  flex-direction: column; /* Stacks buttons vertically */
+  gap: 3vh;            /* Adds space between buttons */
+  box-sizing: border-box; /* make it shrink to 0*/
+  overflow: hidden;       /* make it shrink to 0*/
+  transition: 0.5s; /* Make the cool collapsing and expanding animation */
+  overflow-y: auto; /* Makes it scrollable */
+  position: fixed;
+  z-index: 20
+  /*overflow-x: hidden;*/
+
+
+}
+
+.sidebar button {
+  position:relative;
+  display:inline-block;
+  font-size: 1.5vw;
+  text-align: center;
+  font-family: 'BatmanForever', sans-serif;
+  cursor: pointer;
+  background-color: #111;
+  color: rgb(93, 235, 233);
+  border-bottom: #000000;
+  border-radius: 4px;
+  border-bottom: 2vh solid rgb(93, 235, 233);
+  
+}
+
+.sidebar button:hover {
+  background: #4ca2af;
+}
+
+/* Main Body Styling */
+#content-main {
+  top: 0;
+  background:
+  linear-gradient(rgba(13,13,13,0.75), rgba(13,13,13,0.75)),
+  url("batmanhud.png");
+  background-size: cover;
+  background-position: center;
+  flex-grow: 1;        /* Tells this box to take up ALL remaining space */
+  padding: 40px;
+  background-color: #000000;
+  overflow-y: auto;    /* Adds a scrollbar if the content is long */
+  transition: margin-left .5s;
+}
+
+.menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lang-btn {
+  
+    
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    border: 1px solid rgb(93, 235, 233);
+    background-color: rgb(93, 235, 233);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.lang-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.grid_container {
+
+  display:grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.folder, .avatar {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.wrapper {
+  position: relative;   /* anchor for absolute text */
+  display: inline-block;
+}
+.folder img {
+  transition: 0.5s ;
+  width: 18vw;
+}
+.folder_text {
+  font-family: 'BatmanForever', sans-serif;
+  transition: 0.5s ;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* perfect centering */
+  
+  color: rgb(93, 235, 233);
+
+  font-size: 4vw;
+  font-weight: bold;
+   /* clicks go through text */
+}
+
+.folder_text:hover{
+  cursor:pointer;
+}
+.folder:hover img {
+  cursor:pointer;
+  transform: scale(1.05);
+}
+
+.folder:active img {
+  transform: scale(0.9);
+}
+
+.avatar span {
+  font-family: 'BatmanForever', sans-serif;
+  transition: 0.5s ;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* perfect centering */
+
+  color: rgb(93, 235, 233);
+
+  font-size: 1.8vw;
+  font-weight: bold;
+}
+.avatar img {
+  vertical-align: middle;
+  transition: 0.5s ;
+  max-width: 20vw;
+  height: 30vh;
+}
+
+
+.avatar:hover img {
+  border-radius: 250%;
+  cursor:pointer;
+  transform: scale(1.05);
+  
+}
+.avatar:active img {
+  border-radius: 300;
+  transform: scale(0.9);
+}
+.team_sidebar {
+  flex-shrink: 0;  /* So that the sidebar doesnt shrink from its orginal width */
+  font-family: 'BatmanForever', sans-serif;
+
+  height: 100vh;
+  width: 30vw;     /* Fixed width for the menu */
+  background-color: #111;
+  color: rgb(93, 235, 233);
+  display: flex;
+  flex-direction: column; /* Stacks buttons vertically */
+  gap: 6vh;            /* Adds space between buttons */
+  box-sizing: border-box; /* make it shrink to 0*/
+  overflow: hidden;       /* make it shrink to 0*/
+  transition: 0.5s; /* Make the cool collapsing and expanding animation */
+  overflow-y: auto; /* Makes it scrollable */
+  /*overflow-x: hidden;*/
+}
+
+.team_container {
+  display: flex;
+  height: 100vh; /* Makes the layout fill the full screen height */
+}
+
+.team_sidebar button {
+  position:relative;
+  display:inline-block;
+  font-size: 2vw;
+  text-align: center;
+  font-family: 'BatmanForever', sans-serif;
+  cursor: pointer;
+  background-color: #111;
+  color: rgb(93, 235, 233);
+  border-bottom: #000000;
+  border-radius: 4px;
+  border-bottom: 2vh solid rgb(93, 235, 233);
+  
+}
+
+.sidebar button:hover {
+  background: #4ca2af;
+}
+
+.member {
+  margin: 2rem auto;
+  padding: 1.5rem;
+}
+
+.member-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.member-container img {
+  width: 20vw;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.titles {
+  text-align: right;
+  flex: 1;
+}
+
+.description-container {
+  text-align: left;
+  line-height: 1.6;
+}
+
+
+.settings_button {
+ 
+  width: 32vw;
+  font-size:2.5vw;
+  font-family: 'BatmanForever', sans-serif;
+  cursor: pointer;
+  background-color: #111;
+  color: rgb(93, 235, 233);
+  border-radius: 4px;
+  border-bottom: 2vh solid rgb(93, 235, 233);
+}
