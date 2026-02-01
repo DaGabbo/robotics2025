@@ -8,7 +8,16 @@ function loadContent(fileName,contentChanged) {
       const container = document.getElementById(contentChanged);
       container.innerHTML = data;
 
-      // 🔥 translate newly injected content
+      container.querySelectorAll("script").forEach((oldScript) => {
+        const newScript = document.createElement("script");
+        for (const attr of oldScript.attributes) {
+          newScript.setAttribute(attr.name, attr.value);
+        }
+        newScript.text = oldScript.textContent;
+        document.body.appendChild(newScript);
+        oldScript.remove();
+      });
+
       if (typeof applyTranslations === "function") {
         applyTranslations(container);
       }
@@ -25,7 +34,5 @@ langBtn.addEventListener("click", () => {
     const newLang = currentLang === "en" ? "fr" : "en";
     loadLanguage(newLang);
 
-    // Optional: update button text to show next language
     langBtn.textContent = newLang === "en" ? "🌐 EN/FR" : "🌐 FR/EN";
 });
-
