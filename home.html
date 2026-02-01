@@ -34,6 +34,7 @@
 <body class="scanlines fade-start">
     <div class="sidebar" id="sidebar">    
           </div>
+    <span class="sidebar-indicator" aria-hidden="true"></span>
     <div class="layout-container">
         
         <main id="content-main">
@@ -51,18 +52,21 @@
         loadLanguage(localStorage.getItem("lang") || "en");
         loadContent('opening.html','content-main')
         loadContent('sidebars/home_sidebar.html','sidebar')
+        
     </script>
 <script>
 function openNav() {
   document.getElementById("sidebar").style.width = "30vw";
   document.getElementById("sidebar").style.padding = "1.5vw";
   document.getElementById("content-main").style.marginLeft = "0px";
+  document.documentElement.style.setProperty("--sidebar-width", "30vw");
 }
 
 function closeNav() {
   document.getElementById("sidebar").style.width = "0vw";
   document.getElementById("sidebar").style.padding = "0px";
   document.getElementById("content-main").style.marginLeft= "0px";
+  document.documentElement.style.setProperty("--sidebar-width", "0vw");
 }
 
 document.addEventListener("mousemove", (e) => {
@@ -75,7 +79,6 @@ document.addEventListener("mousemove", (e) => {
 
 });
 </script>
-
 <script>
 var elem = document.documentElement;
 function toggleFullscreen() {

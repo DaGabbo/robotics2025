@@ -5,6 +5,10 @@
             font-style: normal;
         }
 
+:root {
+  --sidebar-width: 30vw;
+}
+
 body {
             background-color: #0D0D0D;
             background-image: url("batmanhud.png");
@@ -60,6 +64,36 @@ p {
 .layout-container {
   display: flex;
   height: 100vh; /* Makes the layout fill the full screen height */
+}
+
+
+.sidebar-indicator {
+  position: fixed;
+  top: 50%;
+  left: var(--sidebar-width);
+  width: clamp(28px, 2.8vw, 40px);
+  height: clamp(28px, 2.8vw, 40px);
+  border-radius: 50%;
+  background-color: #000000;
+  border: 2px solid rgb(93, 235, 233);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(93, 235, 233, 0.4);
+  transition: left 0.5s;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.sidebar-indicator::before {
+  content: "";
+  width: 45%;
+  height: 45%;
+  border-right: 0.28em solid rgb(93, 235, 233);
+  border-top: 0.28em solid rgb(93, 235, 233);
+  transform: rotate(45deg);
+  margin-left: -0.05em;
 }
 
 /* Left Column Styling */
@@ -290,6 +324,14 @@ p {
   line-height: 1.6;
 }
 
+.description-container p {
+  display: block;
+  align-items: initial;
+  justify-content: flex-start;
+  margin: 0.25rem 0 1.25rem 2rem;
+  font-family: 'Courier New', monospace;
+}
+
 
 .settings_button {
   position: relative;   /* anchor for absolute text */
@@ -321,3 +363,4 @@ p {
   margin: 10px 0;
   border-left: 5px solid #00f2ff;
 }
+

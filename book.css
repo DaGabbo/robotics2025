@@ -1,14 +1,21 @@
+@font-face {
+            font-family: 'BatmanForever';
+            src: url('https://fonts.googleapis.com/css?family=Lexend') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
 html, body {
   margin:0;
   padding:0;
 }
 
 .comic {
-  
+  font-family:'Lexend';
   display:flex;
   flex-wrap:wrap;
-  font-family:'Comic Sans', cursive;
+  font-family:lex;
   padding:1vmin;
+
 }
 
 .panel {
