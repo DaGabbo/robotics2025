@@ -1,4 +1,20 @@
 <link rel="stylesheet" href="rulespanel.css">
+<style>
+  .field-visualizer {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 20px;
+  }
+  .field-visualizer model-viewer {
+    width: min(900px, 92vw);
+    height: 55vh;
+    display: block;
+    background: #0f1217;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  }
+</style>
 <h1 data-i18n="game_rules">Game Rules</h1>
 <br>
 <br>
@@ -7,6 +23,18 @@
 
 <h2 data-i18n="goal" style="text-align: center">Goal:</h2>
 <p data-i18n="scoring" style="text-align: center">Score the most points by handling and placing the following engine components that will be on the playing field: fans, cores, and turbines. These components are placed into engines.</p>
+<h2 data-i18n="3dmap" style="text-align: center">3D Map of The Field:</h2>
+<section class="field-visualizer">
+    <model-viewer 
+        src="field.glb"
+        alt="3D field model"
+        camera-controls
+        auto-rotate
+        shadow-intensity="1"
+        exposure="1.1"
+        loading="eager">
+    </model-viewer>
+</section>
 <h2 data-i18n="game_rules2" style="text-align: center">In game rules comic:</h2>
 <article class="comic" style="background-color:#444343a5;">
 
@@ -70,3 +98,4 @@
 </div>
 
 </article>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
