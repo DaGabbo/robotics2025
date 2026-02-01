@@ -4,7 +4,7 @@
     "crc_robotics":"CRC Robotics",
     "team":"Our Team",
     "conception":"Conception",
-    "comp_progress":"Components Progress",
+    "comp_progress":"Component Progress",
     "credits":"Credits",
     "rules":"Rules",
     "settings":"Settings",
@@ -97,6 +97,7 @@
     "jonah_fact":"Batman doesn't need a GPS - he always takes the Dark Knight route 🦇😄 - ChatGPT 2026",
 
     "box_desc":"I worked on the kiosk by managing the wood.",
+    "box_fact":"LIGHT WEIGHT!!",
 
     "mack_desc":"I helped the kiosk team with the building (here and there).",
     "mack_fact":"I CANNOT do the irish jig.",

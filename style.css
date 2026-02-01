@@ -70,7 +70,7 @@ p {
   font-size: 2vw;
   height: 100vh;
   width: 30vw;     /* Fixed width for the menu */
-  background-color: #1111117a;
+  background-color: #111111c4;
   color: rgb(93, 235, 233);
   display: flex;
   flex-direction: column; /* Stacks buttons vertically */
