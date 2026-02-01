@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- 100% AI-->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,6 +16,7 @@
       justify-content: center;
       height: 100vh;
       overflow: hidden;
+      position: relative;
     }
 
     h1 {
@@ -62,16 +62,104 @@
     .login-btn:hover {
       background-color: #808080;
     }
+
+    #intrusion-overlay {
+      position: fixed;
+      inset: 0;
+      background: #0a0a0a;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    #intrusion-text {
+      position: relative;
+      z-index: 1;
+      color: #8dff8b;
+      font-size: 20px;
+      letter-spacing: 0.08em;
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    #fade-overlay {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.6s ease;
+      z-index: 1001;
+    }
+
   </style>
 </head>
 <body>
   <h1>Welcome to Wayne Enterprises</h1>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Wayne_Enterprises_%28logo%29.svg" class="center-img" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Wayne_Enterprises_%28logo%29.svg" alt="Wayne Enterprises Logo" class="center-img" />
 
   <div class="login-box">
     <input type="text" value="bruce.wayne" readonly />
     <input type="password" value="IAmBatman123" readonly />
-    <a href="home.html"><button class="login-btn">Enter</button></a>
+    <button class="login-btn" id="login-btn" type="button">Enter</button>
   </div>
+
+  <div id="intrusion-overlay" aria-live="polite" aria-hidden="true">
+    <div id="intrusion-text"></div>
+  </div>
+  <div id="fade-overlay" aria-hidden="true"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnEnter = document.getElementById('login-btn');
+      const gate = document.getElementById('intrusion-overlay');
+      const msgNode = document.getElementById('intrusion-text');
+      const fadeLayer = document.getElementById('fade-overlay');
+      const msg = 'Warning: Intrusion detected.';
+      const typeSpeedMs = 60;
+      const minTypeMs = 1200;
+      const fadeDelayMs = 650;
+      const pollMs = 50;
+
+      let hasTyped = false;
+      let didFade = false;
+
+      function animateIntrusionText() {
+        msgNode.textContent = '';
+        msg.split('').forEach((letter, i) => {
+          setTimeout(() => {
+            msgNode.textContent += letter;
+          }, typeSpeedMs * i);
+        });
+
+        setTimeout(() => {
+          hasTyped = true;
+        }, Math.max(minTypeMs, msg.length * typeSpeedMs));
+      }
+
+      function doFadeOut() {
+        if (didFade) return;
+        didFade = true;
+        fadeLayer.style.opacity = '1';
+        setTimeout(() => {
+          window.location.href = 'home.html';
+        }, fadeDelayMs);
+      }
+
+      btnEnter.addEventListener('click', () => {
+        btnEnter.disabled = true;
+        gate.style.display = 'flex';
+        gate.setAttribute('aria-hidden', 'false');
+        animateIntrusionText();
+
+        const waitForTyping = setInterval(() => {
+          if (hasTyped) {
+            clearInterval(waitForTyping);
+            doFadeOut();
+          }
+        }, pollMs);
+      });
+    });
+  </script>
 </body>
 </html>
