@@ -102,8 +102,26 @@
     "mack_fact":"I CANNOT do the irish jig.",
 
     "nicolas_desc":"I acted as the Joker in the video and I helped with the tutorial.",
-    "nicolas_fact":"I happily painted my hair green as well as did whiteface."
+    "nicolas_fact":"I happily painted my hair green as well as did whiteface.",
 
-
-
+    "goal":"Goal:",
+    "scoring":"Score the most points by handling and placing the following engine components that will be on the playing field: fans, cores, and turbines. These components are placed into engines.",
+    "game_rules2":"In the game rules comic:",
+    "rule1":"Before the game...",
+    "rule2":"Blue team vs yellow team: 2 robots on each team. 5 minutes per heat.",
+    "rule3":"Each engine component can come in blue, yellow, or red. Each team uses the parts specific to their team color.",
+    "rule4":"6 engines, each can be completed with one fan, one core, one turbine.",
+    "rule5":"Robots can only carry one component at a time. Cannot carry the other team's color: only their team's color and the red ones.",
+    "rule6":"Red parts: unserviceable",
+    "rule7":"If the component that falls out of an engine is a red part, it can be repaired in the repair station. Each team has three repair stations that can turn red parts into repaired parts of their color.",
+    "rule8":"Spare parts lying around can be brought to the spare parts zone. Each team has one.",
+    "rule9":"Scoring...",
+    "rule10":"1 of your color component gives 50 points, 2 give 100 points and 3 give 250 points.",
+    "rule11":"Multipliers...",
+    "rule12":"Tallest stack of the two teams in their spare parts zone brings a 60% multiplier.",
+    "rule13":"Team with most pieces in their spare parts zone earns a 40% multiplier",
+    "rule14":"One team can get both bonuses.",
+    "rule15":"Every repair earns 30 points.",
+    "rule16":"Each component in the spare parts zone is worth 40 points.",
+    "rule17":"The End."
 }

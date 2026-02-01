@@ -4,7 +4,7 @@ html, body {
 }
 
 .comic {
-  
+  justify-content: center;
   display:flex;
   flex-wrap:wrap;
   font-family:'Comic Sans', cursive;
@@ -17,20 +17,23 @@ html, body {
   box-shadow:0 6px 6px -6px #000;
   display:inline-block;
   width:fit-content;
-  height: 40vh;
+  height: 30vh;
   margin:1vmin;
   overflow:hidden;
   position:relative;
   transition: 0.1s;
 }
+
 .panel:hover {
   transform: scale(1.05);
   z-index: 10;
 }
+
 .panel img {
   min-width: auto;
-  height: inherit;
+  height: 30vh;
 }
+
 .text {
   font-size: 20px;
   color:#000;
@@ -92,6 +95,7 @@ html, body {
   transform:skew(-15deg);
   width:0;
 }
+
 
 
 

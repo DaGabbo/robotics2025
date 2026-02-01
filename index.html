@@ -66,24 +66,12 @@
 </head>
 <body>
   <h1>Welcome to Wayne Enterprises</h1>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Wayne_Enterprises_%28logo%29.svg" alt="Wayne Enterprises Logo" class="center-img" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Wayne_Enterprises_%28logo%29.svg" class="center-img" />
 
   <div class="login-box">
     <input type="text" value="bruce.wayne" readonly />
     <input type="password" value="IAmBatman123" readonly />
     <a href="home.html"><button class="login-btn">Enter</button></a>
   </div>
-
-
-
-  <script>
-    function triggerGlitch() {
-      const overlay = document.getElementById('glitchOverlay');
-      overlay.style.display = 'block';
-      overlay.addEventListener('animationend', () => {
-        window.location.href = 'home copy.html';
-      });
-    }
-  </script>
 </body>
 </html>

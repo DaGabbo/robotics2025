@@ -102,5 +102,23 @@
     "mack_fact":"Je NE SAIS PAS faire la gigue irlandaise.",
 
     "nicolas_desc":"J'ai incarné le Joker dans la vidéo et j'ai aidé avec le tutoriel.",
-    "nicolas_fact":"J'ai peint mes cheveux en vert avec plaisir et j'ai aussi fait du maquillage blanc."
+    "nicolas_fact":"J'ai peint mes cheveux en vert avec plaisir et j'ai aussi fait du maquillage blanc.",
+
+    "rule1":"Avant le jeu...",
+    "rule2":"Équipe bleue contre équipe jaune : 2 robots par équipe. 5 minutes par manche.",
+    "rule3":"Chaque composant de moteur peut être bleu, jaune ou rouge. Chaque équipe utilise les pièces correspondant à la couleur de son équipe.",
+    "rule4":"6 moteurs, chacun peut être complété avec un ventilateur, un cœur et une turbine.",
+    "rule5":"Les robots ne peuvent transporter qu'un seul composant à la fois. Ils ne peuvent pas transporter la couleur de l'autre équipe : seulement la couleur de leur équipe et les pièces rouges.",
+    "rule6":"Pièces rouges : non fonctionnelles",
+    "rule7":"Si le composant qui tombe d'un moteur est une pièce rouge, il peut être réparé à la station de réparation. Chaque équipe dispose de trois stations de réparation pouvant transformer les pièces rouges en pièces réparées de leur couleur.",
+    "rule8":"Les pièces de rechange au sol peuvent être apportées à la zone des pièces de rechange. Chaque équipe en possède une.",
+    "rule9":"Pointage...",
+    "rule10":"1 composant de votre couleur donne 50 points, 2 donnent 100 points et 3 donnent 250 points.",
+    "rule11":"Multiplicateurs...",
+    "rule12":"La pile la plus haute des deux équipes dans leur zone de pièces de rechange apporte un multiplicateur de 60 %.",
+    "rule13":"L'équipe ayant le plus de pièces dans sa zone de pièces de rechange obtient un multiplicateur de 40 %.",
+    "rule14":"Une équipe peut obtenir les deux bonus.",
+    "rule15":"Chaque réparation rapporte 30 points.",
+    "rule16":"Chaque composant dans la zone de pièces de rechange vaut 40 points.",
+    "rule17":"Fin."
 }

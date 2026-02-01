@@ -1,25 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- 100% AI-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credits</title>
     <style>
-        @font-face {
-            font-family: 'BatmanForever';
-            src: url('batman_forever/batmfa__.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        body {
-            font-family: 'BatmanForever', sans-serif;
-            background-color: #0D0D0D;
-            color: #FFD700;
-            margin: 0;
-            padding: 0;
-        }
 
         header {
             font-family: 'BatmanForever', sans-serif;
@@ -49,12 +34,65 @@
             padding: 20px;
         }
 
-        .rule {
+        .credits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .credit-card {
             font-family: 'BatmanForever', sans-serif;
             background: #1A1A1A;
-            padding: 15px;
-            margin: 10px 0;
-            border-left: 5px solid #FFD700;
+            padding: 16px;
+            border: 1px solid rgba(61, 147, 146, 0.25);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.18s ease, box-shadow 0.2s ease;
+        }
+
+        .credit-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(61, 147, 146, 0.12), transparent 45%);
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+            pointer-events: none;
+        }
+
+        .credit-card:hover::before {
+            opacity: 1;
+        }
+
+        .credit-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.5);
+        }
+
+
+        .credit-source {
+            display: inline-block;
+            font-size: 12px;
+            letter-spacing: 0.4px;
+            color: rgb(93, 235, 233);
+            margin-bottom: 10px;
+        }
+
+        .credit-link {
+            display: inline-block;
+            color: #0D0D0D;
+            background: rgb(93, 235, 233);
+            padding: 8px 12px;
+            text-decoration: none;
+            font-size: 12px;
+            border: 1px solid rgb(93, 235, 233);
+            transition: transform 0.15s ease, box-shadow 0.2s ease;
+        }
+
+        .credit-link:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 12px rgba(255, 215, 0, 0.25);
         }
 
         footer {
@@ -86,11 +124,6 @@
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <button class="language-toggle" onclick="toggleLanguage()" data-en="French" data-fr="Anglais">French</button>
-    </div>
-   
-
       <!-- Header Section -->
       <header>
         <h1>Credits</h1>
@@ -98,20 +131,64 @@
     
 
     <section id="rules">
-        <div class="rule">
-            <h3> Warner Bros</h3>
-
+        <div class="credits-grid">
+            <div class="credit-card">
+                <h3 class="credit-title">Folder image</h3>
+                <span class="credit-source">iconpacks.net</span>
+                <a class="credit-link" href="https://www.iconpacks.net/free-icon/folder-1484.html" target="_blank" rel="noopener noreferrer">Visit source</a>
+            </div>
+            <div class="credit-card">
+                <h3 class="credit-title">Glitch effect</h3>
+                <span class="credit-source">blog.avada.io</span>
+                <a class="credit-link" href="https://blog.avada.io/css/text-glitch-effects" target="_blank" rel="noopener noreferrer">Visit source</a>
+            </div>
+            <div class="credit-card">
+                <h3 class="credit-title">CRT effect</h3>
+                <span class="credit-source">aleclownes.com</span>
+                <a class="credit-link" href="https://aleclownes.com/2017/02/01/crt-display.html" target="_blank" rel="noopener noreferrer">Visit source</a>
+            </div>
+            <div class="credit-card">
+                <h3 class="credit-title">Batcomputer</h3>
+                <span class="credit-source">youtube.com</span>
+                <a class="credit-link" href="https://youtu.be/b0m5t2XOmzQ?si=h2XqVsHa-FUIBX39" target="_blank" rel="noopener noreferrer">Visit source</a>
+            </div>
+            <div class="credit-card">
+                <h3 class="credit-title">Batcomputer logo</h3>
+                <span class="credit-source">deviantart.com</span>
+                <a class="credit-link" href="https://www.deviantart.com/vincemendneck/art/Batcomputer-Minimalistic-Wallpaper-920266472" target="_blank" rel="noopener noreferrer">Visit source</a>
+            </div>
+            <div class="credit-card">
+                <h3 class="credit-title">Batcomputer HUD wallpaper</h3>
+                <span class="credit-source">deviantart.com</span>
+                <a class="credit-link" href="https://www.deviantart.com/vincemendneck/art/Batcomputer-HUD-Wallpaper-976583882" target="_blank" rel="noopener noreferrer">Visit source</a>
+            </div>
+            <div class="credit-card">
+                <h3 class="credit-title">Scanlines</h3>
+                <span class="credit-source">codepen.io</span>
+                <a class="credit-link" href="https://codepen.io/ynef/pen/yvvyGv" target="_blank" rel="noopener noreferrer">Visit source</a>
+            </div>
+            <div class="credit-card">
+                <h3 class="credit-title">Transition glitch effect</h3>
+                <span class="credit-source">codepen.io</span>
+                <a class="credit-link" href="https://codepen.io/team/nclud/pen/MwaGGE" target="_blank" rel="noopener noreferrer">Visit source</a>
+            </div>
+            <div class="credit-card">
+                <h3 class="credit-title">Text to speech AI</h3>
+                <span class="credit-source">dev.to</span><br>
+                <a class="credit-link" href="https://dev.to/code_2/build-a-full-text-to-speech-web-app-with-html-css-javascript-emm" target="_blank" rel="noopener noreferrer">Visit source</a>
+            </div>
+            <div class="credit-card">
+                <h3 class="credit-title">Comic book strip effect</h3>
+                <span class="credit-source">codepen.io</span>
+                <a class="credit-link" href="https://codepen.io/chris22smith/pen/MyBBOe" target="_blank" rel="noopener noreferrer">Visit source</a>
+            </div>
+            <div class="credit-card">
+                <h3 class="credit-title">Batman comic strip images</h3>
+                <span class="credit-source">comicvine.com</span>
+                <a class="credit-link" href="https://comicvine.gamespot.com" target="_blank" rel="noopener noreferrer">Visit source</a>
+            </div>
+        </div>
     </section>
-    <script>
-        let language = 'en';
-  
-        function toggleLanguage() {
-            language = (language === 'en') ? 'fr' : 'en';
-            document.querySelectorAll('[data-en]').forEach(element => {
-                element.innerText = element.getAttribute(`data-${language}`);
-            });
-        }
-    </script>
 
 </body>
 </html>

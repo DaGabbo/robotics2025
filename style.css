@@ -32,8 +32,10 @@ h1 {
             border-bottom: 1.5vh solid rgb(93, 235, 233);
         }
 h2, h3 {
+  align-items: center;
+  justify-content: center;
   font-family: 'BatmanForever', sans-serif;
-  color: rgb(93, 235, 233);
+  color: rgb(28, 163, 186);
   font-size: 1.5vw;
 }
 
@@ -46,6 +48,9 @@ p {
   color: rgb(93, 235, 233);
   font-size: 1.5vw;
   }
+
+
+
 
 @media (max-width: 600px) {
   .sidebar {
@@ -297,4 +302,9 @@ p {
   color: rgb(93, 235, 233);
   border-radius: 4px;
   border-bottom: 2vh solid rgb(93, 235, 233);
+}
+
+.text_aligner {
+  justify-content: center;
+  align-items: center;
 }
