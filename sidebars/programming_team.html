@@ -1,17 +1,12 @@
 <nav class="menu-header">
     <h2>Coding Division</h2>
     <!-- Language switch button -->
-    <button style="width:80vw" class="lang-btn" title="Back" data-i18n="back_button" onclick="loadContent('team_intro.html','content-main'); loadContent('sidebars/home_sidebar.html','sidebar')"></button>     
+    <button style="width:8vw" class="lang-btn" title="Back" data-i18n="back_button" onclick="loadContent('team_intro.html','content-main'); loadContent('sidebars/home_sidebar.html','sidebar')"></button>     
     <button onclick="switchLanguage()"id="lang-switch" class="lang-btn" title="Switch Language" data-i18n="switch_lang"></button>          
 </nav>
 
+<button onclick="loadContent('members/gab.html','content-main')" class="glitch" data-text="Gabriel Ramos Rodriguez">Gabriel Ramos Rodriguez</button>
 
-<button class="avatar wrapper" onclick="loadContent('members/christian.html','content-main')">
-    <img src="avatars/robin.png" alt="Avatar">
-    <span class="glitch" data-text="Christian Siracusa">Christian Siracusa</span>
-</button>
+<button class="glitch" data-text="Christian Siracusa" onclick="loadContent('members/christian.html','content-main')">Christian Siracusa</button>
 
-<button class="avatar wrapper" onclick="loadContent('members/george.html','content-main')">
-    <img src="avatars/firefly.png" alt="Avatar">
-    <span class="glitch" data-text="George Konstantopoulos">George Konstantopoulos</span>
-</button>
+<button class="glitch" data-text="George Konstantopoulos" onclick="loadContent('members/george.html','content-main')">George Konstantopoulos</button>

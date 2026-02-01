@@ -51,7 +51,6 @@
         loadLanguage(localStorage.getItem("lang") || "en");
         loadContent('opening.html','content-main')
         loadContent('sidebars/home_sidebar.html','sidebar')
-        
     </script>
 <script>
 function openNav() {
@@ -76,17 +75,7 @@ document.addEventListener("mousemove", (e) => {
 
 });
 </script>
-<script>
-      let language = 'en';
 
-      function toggleLanguage() {
-          language = (language === 'en') ? 'fr' : 'en';
-          document.querySelectorAll('[data-en]').forEach(element => {
-              element.innerText = element.getAttribute(`data-${language}`);
-          });
-        
-      }
-</script>
 <script>
 var elem = document.documentElement;
 function toggleFullscreen() {

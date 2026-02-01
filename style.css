@@ -19,6 +19,7 @@ body {
             overflow: hidden;
             margin: 0;
         }
+
 h1 {
   font-family: 'BatmanForever', sans-serif;
             flex: 1;
@@ -31,12 +32,13 @@ h1 {
             color: rgb(93, 235, 233);
             border-bottom: 1.5vh solid rgb(93, 235, 233);
         }
+
 h2, h3 {
   align-items: center;
   justify-content: center;
   font-family: 'BatmanForever', sans-serif;
   color: rgb(28, 163, 186);
-  font-size: 1.5vw;
+  font-size: 1.2vw;
 }
 
 p {
@@ -48,9 +50,6 @@ p {
   color: rgb(93, 235, 233);
   font-size: 1.5vw;
   }
-
-
-
 
 @media (max-width: 600px) {
   .sidebar {
@@ -70,7 +69,7 @@ p {
   font-size: 2vw;
   height: 100vh;
   width: 30vw;     /* Fixed width for the menu */
-  background-color: #111111c4;
+  background-color: #111111e2;
   color: rgb(93, 235, 233);
   display: flex;
   flex-direction: column; /* Stacks buttons vertically */
@@ -247,7 +246,7 @@ p {
 .team_sidebar button {
   position:relative;
   display:inline-block;
-  font-size: 2vw;
+  font-size: 1.5vw;
   text-align: center;
   font-family: 'BatmanForever', sans-serif;
   cursor: pointer;
@@ -287,13 +286,16 @@ p {
 }
 
 .description-container {
-  text-align: left;
+  text-align: center;
   line-height: 1.6;
 }
 
 
 .settings_button {
- 
+  position: relative;   /* anchor for absolute text */
+  display: inline-block;
+  padding: 3px;
+  text-align: center;
   width: 32vw;
   font-size:2.5vw;
   font-family: 'BatmanForever', sans-serif;
@@ -307,4 +309,15 @@ p {
 .text_aligner {
   justify-content: center;
   align-items: center;
+}
+
+.spaced_buttons {
+  gap: 3vh ;
+}
+
+.cue_card {
+  background: #1A1A1A;
+  padding: 15px;
+  margin: 10px 0;
+  border-left: 5px solid #00f2ff;
 }

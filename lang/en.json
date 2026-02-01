@@ -32,6 +32,9 @@
     "robot_kiosk":"Robot & Kiosk",
     "video_tutorial":"Video & Tutorial",
     
+    "gab_desc":"I did a programming class 4 times a week where Tommi and I taught Christian, George and Vassili.",
+    "gab_fact":"Not only is good food a perk of being latino, but I can also put myself as mexican batman in the website(not cultural appropriation if you're latino!)",
+
     "zoe_desc":"I worked on kiosk and played Harley Quinn in the video.",
     "zoe_fact":"Best hot chocolate maker.",
 
@@ -105,9 +108,9 @@
     "nicolas_desc":"I acted as the Joker in the video and I helped with the tutorial.",
     "nicolas_fact":"I happily painted my hair green as well as did whiteface.",
 
-    "goal":"Goal:",
+    "goal":"Goal of The Game:",
     "scoring":"Score the most points by handling and placing the following engine components that will be on the playing field: fans, cores, and turbines. These components are placed into engines.",
-    "game_rules2":"In the game rules comic:",
+    "game_rules2":"Comic:",
     "rule1":"Before the game...",
     "rule2":"Blue team vs yellow team: 2 robots on each team. 5 minutes per heat.",
     "rule3":"Each engine component can come in blue, yellow, or red. Each team uses the parts specific to their team color.",
@@ -124,5 +127,33 @@
     "rule14":"One team can get both bonuses.",
     "rule15":"Every repair earns 30 points.",
     "rule16":"Each component in the spare parts zone is worth 40 points.",
-    "rule17":"The End."
-}
+    "rule17":"The End.",
+
+    "toggle_full":"Toggle Fullscreen",
+    "toggle_scan":"Toggle Scanline Effect",
+
+    "visit_source":"Visit source",
+    "credit1":"Folder image",
+    "credit2":"Glitch effect",
+    "credit3":"Batcomputer logo",
+    "credit4":"Batcomputer HUD wallpaper",
+    "credit5":"Scanlines",
+    "credit6":"Transition glitch effect",
+    "credit7":"Comic book strip effect",
+    "credit8":"Batman comic strip images",
+
+    "about_crc":" What is CRC Robotics?",
+    "about_crctext":"CRC Robotics Competition is a non-profit organization founded in 2001 that successfully established a way to link engineering, coding, art, mathematics, and more into one competition. In recent years, they have also added a junior division, making robotics more accessible to younger participants.",
+    "beyond_competition":"Beyond Competition",
+    "beyond_competitiontext":"Beyond the competitive aspect, CRC places strong emphasis on having their competition improve contestants’ teamwork, building meaningful connections, and providing resources necessary to develop their knowledge in STEM.",
+    "crc_more":"To learn more about the competition, you can visit their",
+    
+    "conception_title1":"Game Piece Conveyor System",
+    "conception_title2":"Electronics",
+    "conception_title3":"Claw Lift / Game Piece Stacking Lift",
+    "conception_title4":"Drive System",
+    "conception1":"Game piece conveyor system is made up of 3 distinct levels for each size of GP. Proportions and alignment are exactly molded to match the entrance of the Engines for extreme ease and efficiency when playing the game. Each conveyor system funnels game pieces from the playing field, as they stand, into the desired channel to match the Engine, allowing for undemanding and simple manipulation of the GP's and the Engines together when ejected from the back side of the robot. Both the chain system (sprocket, chain, dividers) and their bearing brackets are fully custom designed.",
+    "conception2":"All electronics are securely mounted onto the top frame of the robot, distributed for easy access and efficiency, also providing clear accessibility to the kill switch and Crcduino. The battery is placed on the front end of the robot frame to counter weight the components - such as the 3 motor setup for the distinct conveyors - it also balances the robot's side where the wheelbase is slightly shortened for maneuverability over the engines.",
+    "conception3":"Claw lift and rotating mechanism are placed at the front end of the robot at a precise position to pick up the 'core' GP through our conveyor system for maximum potential when stacking (since the 'core' is the tallest vertically placeable GP - the mechanism also acting as counterweight. The mechanism is made up of 2 large pulleys/chains, positioned for maximum moment of inertia for increased torque; This allows the claw to be rotated at a high precision while being able to carry the heaviest of game pieces.",
+    "conception4":"The drive system is RWD made up of 8 distinct wheels. The front 4 wheels (2 each side sandwich) are mounted on 2 bearings and heavily braced Vex metal, a sprocket is connected in between both thin but resistant wheels for a seamless chain driven drive. The back 4 dead wheels (2 each side sandwich) are independent from each other despite being on the same shaft due to specially placed bearings, making it incredibly smooth to turn even with 2 powered wheels out of 4. The system is powered by two, 117rpm GoBilda motors for a balance of speed and torque. As a whole the drive has a very small footprint to give the robot an elite advantage when playing on the Engines."
+} 

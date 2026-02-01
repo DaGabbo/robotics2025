@@ -4,7 +4,7 @@
     "crc_robotics":"CRC Robotique",
     "team":"Notre Équipe",
     "conception":"Conception",
-    "comp_progress":"Progrès Des Composantes",
+    "comp_progress":"Progression des Composants",
     "credits":"Crédits",
     "rules":"Règles Du Jeu",
     "settings":"Paramètres",
@@ -31,6 +31,9 @@
     "robot_video":"Robot & Vidéo",
     "robot_kiosk":"Robot & Kiosque",
     "video_tutorial":"Vidéo & Tutoriel",
+
+    "gab_desc":"J'ai fait un cours de programmation quatre fois par semaine où Tommi et moi avons enseigné à Christian, George et Vassili.",
+    "gab_fact":"Non seulement la bonne nourriture est un avantage d'être latino, mais je peux aussi me définir comme Batman mexicain dans le site web(ce n'est pas de l'appropriation culturelle si tu es latino !)",
 
     "zoe_desc":"J'ai travaillé sur le kiosque et j'ai pris le rôle de Harley Quinn dans la vidéo.",
     "zoe_fact":"Je suis la meilleure préparatrice de chocolat chaud",
@@ -97,6 +100,7 @@
     "jonah_fact":"Batman n'a pas besoin de GPS — il prend toujours la route du Chevalier Noir 🦇😄 - ChatGPT 2026",
 
     "box_desc":"J'ai travaillé sur le kiosque en gérant le bois.",
+    "box_fact":"C'EST PAS LOURD!!",
 
     "mack_desc":"J'ai aidé l'équipe du kiosque avec la construction (ici et là)",
     "mack_fact":"Je NE SAIS PAS faire la gigue irlandaise.",
@@ -104,6 +108,9 @@
     "nicolas_desc":"J'ai incarné le Joker dans la vidéo et j'ai aidé avec le tutoriel.",
     "nicolas_fact":"J'ai peint mes cheveux en vert avec plaisir et j'ai aussi fait du maquillage blanc.",
 
+    "goal":"But du jeu:",
+    "scoring":"Marquez le plus de points en manipulant et en plaçant les composants de moteur suivants qui se trouveront sur le terrain de jeu : ventilateurs, cœurs et turbines. Ces composants sont placés dans des moteurs.",
+    "game_rules2":"Comic:",
     "rule1":"Avant le jeu...",
     "rule2":"Équipe bleue contre équipe jaune : 2 robots par équipe. 5 minutes par manche.",
     "rule3":"Chaque composant de moteur peut être bleu, jaune ou rouge. Chaque équipe utilise les pièces correspondant à la couleur de son équipe.",
@@ -120,5 +127,33 @@
     "rule14":"Une équipe peut obtenir les deux bonus.",
     "rule15":"Chaque réparation rapporte 30 points.",
     "rule16":"Chaque composant dans la zone de pièces de rechange vaut 40 points.",
-    "rule17":"Fin."
+    "rule17":"Fin.",
+
+    "toggle_full":"Basculer Plein Écran",
+    "toggle_scan":"Lignes de Balayage",
+
+    "visit_source":"Visiter la source",
+    "credit1":"Image du dossier",
+    "credit2":"Effet de glitch",
+    "credit3":"Logo du Batcomputer",
+    "credit4":"Fond d'écran HUD du Batcomputer",
+    "credit5":"Lignes de balayage",
+    "credit6":"Effet de glitch de transition",
+    "credit7":"Effet de bande dessinée",
+    "credit8":"Images de bande dessinée Batman",
+
+    "about_crc":"C'est quoi CRC Robotique?",
+    "about_crctext":"CRC Roboticque est un organisme à but non lucratif fondé en 2001 qui a réussi à établir un moyen de relier l'ingénierie, la programmation, l'art, les mathématiques et bien plus encore en une seule compétition. Ces dernières années, une division junior a également été ajoutée, rendant la robotique plus accessible aux plus jeunes participants.",
+    "beyond_competition":"Au-delà de la compétition",
+    "beyond_competitiontext":"Au-delà de l'aspect compétitif, CRC met fortement l'accent sur l'amélioration du travail d'équipe des participants, la création de liens significatifs et la mise à disposition des ressources nécessaires au développement de leurs connaissances en STIM.",
+    "crc_more":"Pour en savoir plus sur la compétition, vous pouvez visiter leur",
+
+    "conception_title1":"Système de convoyeur de pièces de jeu",
+    "conception_title2":"Électronique",
+    "conception_title3":"Élévateur à pince / Élévateur d'empilement de pièces de jeu",
+    "conception_title4":"Système d'entraînement",
+    "conception1":"Le système de convoyeur de pièces de jeu est composé de 3 niveaux distincts pour chaque taille de GP. Les proportions et l'alignement sont précisément conçus pour correspondre à l'entrée des moteurs, assurant une facilité et une efficacité extrêmes pendant le jeu. Chaque système de convoyeur canalise les pièces de jeu depuis le terrain, telles qu'elles se présentent, vers le canal souhaité correspondant au moteur, permettant une manipulation simple et sans effort des GP et des moteurs ensemble lors de leur éjection par l'arrière du robot. Le système de chaîne (pignons, chaîne, séparateurs) ainsi que les supports de roulements sont entièrement conçus sur mesure.",
+    "conception2":"Toute l'électronique est solidement montée sur le châssis supérieur du robot, répartie pour un accès facile et une efficacité optimale, tout en offrant une accessibilité claire à l'interrupteur d'arrêt d'urgence et au Crcduino. La batterie est placée à l'avant du châssis du robot afin de contrebalancer les composants — tels que la configuration à 3 moteurs pour les convoyeurs distincts — et d'équilibrer le côté du robot où l'empattement est légèrement raccourci pour améliorer la maniabilité au-dessus des moteurs.",
+    "conception3":"L'élévateur à pince et le mécanisme de rotation sont placés à l'avant du robot à une position précise afin de saisir la GP « core » via notre système de convoyeur, maximisant le potentiel d'empilement (puisque le « core » est la GP plaçable verticalement la plus haute), le mécanisme agissant également comme contrepoids. Le mécanisme est composé de 2 grandes poulies/chaînes, positionnées pour offrir un moment d'inertie maximal et ainsi augmenter le couple ; cela permet de faire pivoter la pince avec une grande précision tout en étant capable de transporter les pièces de jeu les plus lourdes.",
+    "conception4":"Le système d'entraînement est à propulsion arrière (RWD) et se compose de 8 roues distinctes. Les 4 roues avant (2 de chaque côté en configuration sandwich) sont montées sur 2 roulements et solidement renforcées par du métal Vex ; un pignon est connecté entre les deux roues fines mais résistantes pour une transmission par chaîne fluide et continue. Les 4 roues arrière libres (2 de chaque côté en configuration sandwich) sont indépendantes les unes des autres malgré leur présence sur le même axe grâce à des roulements spécialement positionnés, rendant les virages extrêmement fluides même avec seulement 2 roues motrices sur 4. Le système est propulsé par deux moteurs GoBilda de 117 tr/min, offrant un équilibre entre vitesse et couple. Dans son ensemble, le système d'entraînement possède une empreinte très réduite, conférant au robot un avantage d'élite lors du jeu sur les moteurs."
 }

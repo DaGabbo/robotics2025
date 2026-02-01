@@ -15,19 +15,6 @@
             font-weight: bold;
         }
 
-        nav {
-            font-family: 'BatmanForever', sans-serif;
-            background: #222;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: #FFD700;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-        }
 
         section {
             font-family: 'BatmanForever', sans-serif;
@@ -43,7 +30,7 @@
         .credit-card {
             font-family: 'BatmanForever', sans-serif;
             background: #1A1A1A;
-            padding: 16px;
+            padding: 18px;
             border: 1px solid rgba(61, 147, 146, 0.25);
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
             position: relative;
@@ -73,7 +60,7 @@
 
         .credit-source {
             display: inline-block;
-            font-size: 12px;
+            font-size: 10px;
             letter-spacing: 0.4px;
             color: rgb(93, 235, 233);
             margin-bottom: 10px;
@@ -85,107 +72,68 @@
             background: rgb(93, 235, 233);
             padding: 8px 12px;
             text-decoration: none;
-            font-size: 12px;
+            font-size: 10px;
             border: 1px solid rgb(93, 235, 233);
             transition: transform 0.15s ease, box-shadow 0.2s ease;
         }
 
         .credit-link:hover {
             transform: translateY(-1px);
-            box-shadow: 0 6px 12px rgba(255, 215, 0, 0.25);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.25);
         }
-
-        footer {
-            background-color: #111;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-        }
-        .language-toggle {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background: rgba(10, 20, 40, 0.9);
-            color: cyan;
-            border: 2px solid cyan;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.2s, background 0.3s;
-            box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.8);
-            font-family: 'BatmanForever', sans-serif;
-        }
-
-        .language-toggle:hover {
-            background: rgba(0, 255, 255, 0.3);
-            transform: scale(1.1);
+        .h3 {
+            font-size: 15px
         }
     </style>
 </head>
 <body>
       <!-- Header Section -->
       <header>
-        <h1>Credits</h1>
+        <h1 data-i18n="credits">Credits</h1>
     </header>
     
 
     <section id="rules">
         <div class="credits-grid">
             <div class="credit-card">
-                <h3 class="credit-title">Folder image</h3>
+                <h3 class="credit-title" data-i18n="credit1"></h3>
                 <span class="credit-source">iconpacks.net</span>
-                <a class="credit-link" href="https://www.iconpacks.net/free-icon/folder-1484.html" target="_blank" rel="noopener noreferrer">Visit source</a>
+                <a class="credit-link" href="https://www.iconpacks.net/free-icon/folder-1484.html" target="_blank" rel="noopener noreferrer" data-i18n="visit_source"></a>
             </div>
             <div class="credit-card">
-                <h3 class="credit-title">Glitch effect</h3>
-                <span class="credit-source">blog.avada.io</span>
-                <a class="credit-link" href="https://blog.avada.io/css/text-glitch-effects" target="_blank" rel="noopener noreferrer">Visit source</a>
+                <h3 class="credit-title" data-i18n="credit2"></h3>
+                <span class="credit-source">codepen.io</span>
+                <a class="credit-link" href="https://codepen.io/mondo-iwanow/pen/xoxvgE" target="_blank" rel="noopener noreferrer" data-i18n="visit_source"></a>
             </div>
             <div class="credit-card">
-                <h3 class="credit-title">CRT effect</h3>
-                <span class="credit-source">aleclownes.com</span>
-                <a class="credit-link" href="https://aleclownes.com/2017/02/01/crt-display.html" target="_blank" rel="noopener noreferrer">Visit source</a>
-            </div>
-            <div class="credit-card">
-                <h3 class="credit-title">Batcomputer</h3>
-                <span class="credit-source">youtube.com</span>
-                <a class="credit-link" href="https://youtu.be/b0m5t2XOmzQ?si=h2XqVsHa-FUIBX39" target="_blank" rel="noopener noreferrer">Visit source</a>
-            </div>
-            <div class="credit-card">
-                <h3 class="credit-title">Batcomputer logo</h3>
+                <h3 class="credit-title" data-i18n="credit3"></h3>
                 <span class="credit-source">deviantart.com</span>
-                <a class="credit-link" href="https://www.deviantart.com/vincemendneck/art/Batcomputer-Minimalistic-Wallpaper-920266472" target="_blank" rel="noopener noreferrer">Visit source</a>
+                <a class="credit-link" href="https://www.deviantart.com/vincemendneck/art/Batcomputer-Minimalistic-Wallpaper-920266472" target="_blank" rel="noopener noreferrer" data-i18n="visit_source">Visit source</a>
             </div>
             <div class="credit-card">
-                <h3 class="credit-title">Batcomputer HUD wallpaper</h3>
+                <h3 class="credit-title" data-i18n="credit4"></h3>
                 <span class="credit-source">deviantart.com</span>
-                <a class="credit-link" href="https://www.deviantart.com/vincemendneck/art/Batcomputer-HUD-Wallpaper-976583882" target="_blank" rel="noopener noreferrer">Visit source</a>
+                <a class="credit-link" href="https://www.deviantart.com/vincemendneck/art/Batcomputer-HUD-Wallpaper-976583882" target="_blank" rel="noopener noreferrer" data-i18n="visit_source">Visit source</a>
             </div>
             <div class="credit-card">
-                <h3 class="credit-title">Scanlines</h3>
+                <h3 class="credit-title" data-i18n="credit5"></h3>
                 <span class="credit-source">codepen.io</span>
-                <a class="credit-link" href="https://codepen.io/ynef/pen/yvvyGv" target="_blank" rel="noopener noreferrer">Visit source</a>
+                <a class="credit-link" href="https://codepen.io/ynef/pen/yvvyGv" target="_blank" rel="noopener noreferrer" data-i18n="visit_source">Visit source</a>
             </div>
             <div class="credit-card">
-                <h3 class="credit-title">Transition glitch effect</h3>
+                <h3 class="credit-title" data-i18n="credit6"></h3>
                 <span class="credit-source">codepen.io</span>
-                <a class="credit-link" href="https://codepen.io/team/nclud/pen/MwaGGE" target="_blank" rel="noopener noreferrer">Visit source</a>
+                <a class="credit-link" href="https://codepen.io/team/nclud/pen/MwaGGE" target="_blank" rel="noopener noreferrer" data-i18n="visit_source">Visit source</a>
             </div>
             <div class="credit-card">
-                <h3 class="credit-title">Text to speech AI</h3>
-                <span class="credit-source">dev.to</span><br>
-                <a class="credit-link" href="https://dev.to/code_2/build-a-full-text-to-speech-web-app-with-html-css-javascript-emm" target="_blank" rel="noopener noreferrer">Visit source</a>
-            </div>
-            <div class="credit-card">
-                <h3 class="credit-title">Comic book strip effect</h3>
+                <h3 class="credit-title" data-i18n="credit7"></h3>
                 <span class="credit-source">codepen.io</span>
-                <a class="credit-link" href="https://codepen.io/chris22smith/pen/MyBBOe" target="_blank" rel="noopener noreferrer">Visit source</a>
+                <a class="credit-link" href="https://codepen.io/chris22smith/pen/MyBBOe" target="_blank" rel="noopener noreferrer" data-i18n="visit_source">Visit source</a>
             </div>
             <div class="credit-card">
-                <h3 class="credit-title">Batman comic strip images</h3>
+                <h3 class="credit-title" data-i18n="credit8"></h3>
                 <span class="credit-source">comicvine.com</span>
-                <a class="credit-link" href="https://comicvine.gamespot.com" target="_blank" rel="noopener noreferrer">Visit source</a>
+                <a class="credit-link" href="https://comicvine.gamespot.com" target="_blank" rel="noopener noreferrer" data-i18n="visit_source">Visit source</a>
             </div>
         </div>
     </section>
