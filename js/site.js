@@ -30,9 +30,11 @@ function loadContent(fileName,contentChanged) {
 
 const langBtn = document.getElementById("lang-switch");
 
-langBtn.addEventListener("click", () => {
+if (langBtn) {
+  langBtn.addEventListener("click", () => {
     const newLang = currentLang === "en" ? "fr" : "en";
     loadLanguage(newLang);
 
-    langBtn.textContent = newLang === "en" ? "🌐 EN/FR" : "🌐 FR/EN";
-});
+    langBtn.textContent = newLang === "en" ? "???? EN/FR" : "???? FR/EN";
+  });
+}
