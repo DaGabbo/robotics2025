@@ -1,7 +1,7 @@
 @font-face {
             font-family: 'BatmanForever';
             src: url('batman_forever/batmfa__.ttf') format('truetype');
-            font-weight: normal;
+            font-weight: lighter;
             font-style: normal;
         }
 
@@ -12,7 +12,7 @@
 body {
             background-color: #0D0D0D;
             background-image: url("batmanhud.png");
-            font-family:'Roboto';
+            font-family:'Lato';
             color: rgb(93, 235, 233);
             background-repeat: no-repeat;
             background-position: center;
@@ -81,7 +81,7 @@ p {
   justify-content: center;
   transform: translate(-50%, -50%);
   box-shadow: 0 0 10px rgba(93, 235, 233, 0.4);
-  transition: left 0.5s;
+  transition: left 0.35s;
   z-index: 30;
   pointer-events: none;
 }
@@ -110,16 +110,23 @@ p {
   gap: 3vh;            /* Adds space between buttons */
   box-sizing: border-box; /* make it shrink to 0*/
   overflow: hidden;       /* make it shrink to 0*/
-  transition: 0.5s; /* Make the cool collapsing and expanding animation */
+  transition: 0.35s; /* Make the cool collapsing and expanding animation */
   overflow-y: auto; /* Makes it scrollable */
   position: fixed;
-  z-index: 20
+  z-index: 20;
+
+
+
   /*overflow-x: hidden;*/
 
 
 }
 
 .sidebar button {
+  align-self: center;
+  text-align:center;
+  width: 20vw;
+  justify-self: center;
   position:relative;
   display:inline-block;
   font-size: 1.5vw;
@@ -160,8 +167,6 @@ p {
 }
 
 .lang-btn {
-  
-    
     padding: 0.2rem 0.5rem;
     border-radius: 5px;
     border: 1px solid rgb(93, 235, 233);
