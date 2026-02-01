@@ -18,6 +18,7 @@
     "mentors":"Mentors",
     "entire":"The Entire Team",
 
+
     "back_button": "Back",
     
     "task":"What Did I do? :",
@@ -31,7 +32,11 @@
     "robot_video":"Robot & Video",
     "robot_kiosk":"Robot & Kiosk",
     "video_tutorial":"Video & Tutorial",
-    
+    "website_video":"Website & Video",
+    "robot_kiosk_website":"Robot, Kiosk & Website",
+
+
+
     "gab_desc":"I did a programming class 4 times a week where Tommi and I taught Christian, George and Vassili.",
     "gab_fact":"Not only is good food a perk of being latino, but I can also put myself as mexican batman in the website(not cultural appropriation if you're latino!)",
 
@@ -155,5 +160,32 @@
     "conception1":"Game piece conveyor system is made up of 3 distinct levels for each size of GP. Proportions and alignment are exactly molded to match the entrance of the Engines for extreme ease and efficiency when playing the game. Each conveyor system funnels game pieces from the playing field, as they stand, into the desired channel to match the Engine, allowing for undemanding and simple manipulation of the GP's and the Engines together when ejected from the back side of the robot. Both the chain system (sprocket, chain, dividers) and their bearing brackets are fully custom designed.",
     "conception2":"All electronics are securely mounted onto the top frame of the robot, distributed for easy access and efficiency, also providing clear accessibility to the kill switch and Crcduino. The battery is placed on the front end of the robot frame to counter weight the components - such as the 3 motor setup for the distinct conveyors - it also balances the robot's side where the wheelbase is slightly shortened for maneuverability over the engines.",
     "conception3":"Claw lift and rotating mechanism are placed at the front end of the robot at a precise position to pick up the 'core' GP through our conveyor system for maximum potential when stacking (since the 'core' is the tallest vertically placeable GP - the mechanism also acting as counterweight. The mechanism is made up of 2 large pulleys/chains, positioned for maximum moment of inertia for increased torque; This allows the claw to be rotated at a high precision while being able to carry the heaviest of game pieces.",
-    "conception4":"The drive system is RWD made up of 8 distinct wheels. The front 4 wheels (2 each side sandwich) are mounted on 2 bearings and heavily braced Vex metal, a sprocket is connected in between both thin but resistant wheels for a seamless chain driven drive. The back 4 dead wheels (2 each side sandwich) are independent from each other despite being on the same shaft due to specially placed bearings, making it incredibly smooth to turn even with 2 powered wheels out of 4. The system is powered by two, 117rpm GoBilda motors for a balance of speed and torque. As a whole the drive has a very small footprint to give the robot an elite advantage when playing on the Engines."
+    "conception4":"The drive system is RWD made up of 8 distinct wheels. The front 4 wheels (2 each side sandwich) are mounted on 2 bearings and heavily braced Vex metal, a sprocket is connected in between both thin but resistant wheels for a seamless chain driven drive. The back 4 dead wheels (2 each side sandwich) are independent from each other despite being on the same shaft due to specially placed bearings, making it incredibly smooth to turn even with 2 powered wheels out of 4. The system is powered by two, 117rpm GoBilda motors for a balance of speed and torque. As a whole the drive has a very small footprint to give the robot an elite advantage when playing on the Engines.",
+    
+    
+    "charliemo_desc": "I worked on the kiosk, attached one of the Batmobile wings, did LED soldering, worked on the Batmobile, and made the LED holder shaped like a circle.",
+    "charliemo_fact": "I like bagels",
+
+    "kamrynhum_desc": "Worked on the kiosk.",
+    "kamrynhum_fact": ".",
+
+    "euniceliang_desc": "Worked on the kiosk (mainly the Batman figure) and the video.",
+    "euniceliang_fact": "I need to fix my sleep schedule.",
+
+    "tommisabra_desc": "Taught programming for the competition.",
+    "tommisabra_fact": "N/A",
+
+    "adihverma_desc": "I designed and built the robot, as well as wrote the content for the website.",
+    "adihverma_fact": "Add me on Fortnite 🤪: Gamer007ny",
+
+    "zacharystewart_desc": "I constructed the robot and CADed its parts.",
+    "zacharystewart_fact": "N/A",
+
+    "alanamangione_desc": "I acted in the video and helped with the website.",
+    "alanamangione_fact": "I don't know anything about coding. This is awkward.",
+
+    "sofiamazareanu_desc": "I directed the video and wrote the script for it.",
+    "sofiamazareanu_fact": "I like the colour blue."
+
+
 } 

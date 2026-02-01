@@ -31,6 +31,8 @@
     "robot_video":"Robot & Vidéo",
     "robot_kiosk":"Robot & Kiosque",
     "video_tutorial":"Vidéo & Tutoriel",
+    "website_video":"Site Web & Vidéo",
+    "robot_kiosk_website":"Robot, Kiosque & Site Web",
 
     "gab_desc":"J'ai fait un cours de programmation quatre fois par semaine où Tommi et moi avons enseigné à Christian, George et Vassili.",
     "gab_fact":"Non seulement la bonne nourriture est un avantage d'être latino, mais je peux aussi me définir comme Batman mexicain dans le site web(ce n'est pas de l'appropriation culturelle si tu es latino !)",
@@ -155,5 +157,30 @@
     "conception1":"Le système de convoyeur de pièces de jeu est composé de 3 niveaux distincts pour chaque taille de GP. Les proportions et l'alignement sont précisément conçus pour correspondre à l'entrée des moteurs, assurant une facilité et une efficacité extrêmes pendant le jeu. Chaque système de convoyeur canalise les pièces de jeu depuis le terrain, telles qu'elles se présentent, vers le canal souhaité correspondant au moteur, permettant une manipulation simple et sans effort des GP et des moteurs ensemble lors de leur éjection par l'arrière du robot. Le système de chaîne (pignons, chaîne, séparateurs) ainsi que les supports de roulements sont entièrement conçus sur mesure.",
     "conception2":"Toute l'électronique est solidement montée sur le châssis supérieur du robot, répartie pour un accès facile et une efficacité optimale, tout en offrant une accessibilité claire à l'interrupteur d'arrêt d'urgence et au Crcduino. La batterie est placée à l'avant du châssis du robot afin de contrebalancer les composants — tels que la configuration à 3 moteurs pour les convoyeurs distincts — et d'équilibrer le côté du robot où l'empattement est légèrement raccourci pour améliorer la maniabilité au-dessus des moteurs.",
     "conception3":"L'élévateur à pince et le mécanisme de rotation sont placés à l'avant du robot à une position précise afin de saisir la GP « core » via notre système de convoyeur, maximisant le potentiel d'empilement (puisque le « core » est la GP plaçable verticalement la plus haute), le mécanisme agissant également comme contrepoids. Le mécanisme est composé de 2 grandes poulies/chaînes, positionnées pour offrir un moment d'inertie maximal et ainsi augmenter le couple ; cela permet de faire pivoter la pince avec une grande précision tout en étant capable de transporter les pièces de jeu les plus lourdes.",
-    "conception4":"Le système d'entraînement est à propulsion arrière (RWD) et se compose de 8 roues distinctes. Les 4 roues avant (2 de chaque côté en configuration sandwich) sont montées sur 2 roulements et solidement renforcées par du métal Vex ; un pignon est connecté entre les deux roues fines mais résistantes pour une transmission par chaîne fluide et continue. Les 4 roues arrière libres (2 de chaque côté en configuration sandwich) sont indépendantes les unes des autres malgré leur présence sur le même axe grâce à des roulements spécialement positionnés, rendant les virages extrêmement fluides même avec seulement 2 roues motrices sur 4. Le système est propulsé par deux moteurs GoBilda de 117 tr/min, offrant un équilibre entre vitesse et couple. Dans son ensemble, le système d'entraînement possède une empreinte très réduite, conférant au robot un avantage d'élite lors du jeu sur les moteurs."
+    "conception4":"Le système d'entraînement est à propulsion arrière (RWD) et se compose de 8 roues distinctes. Les 4 roues avant (2 de chaque côté en configuration sandwich) sont montées sur 2 roulements et solidement renforcées par du métal Vex ; un pignon est connecté entre les deux roues fines mais résistantes pour une transmission par chaîne fluide et continue. Les 4 roues arrière libres (2 de chaque côté en configuration sandwich) sont indépendantes les unes des autres malgré leur présence sur le même axe grâce à des roulements spécialement positionnés, rendant les virages extrêmement fluides même avec seulement 2 roues motrices sur 4. Le système est propulsé par deux moteurs GoBilda de 117 tr/min, offrant un équilibre entre vitesse et couple. Dans son ensemble, le système d'entraînement possède une empreinte très réduite, conférant au robot un avantage d'élite lors du jeu sur les moteurs.",
+
+    "charliemo_desc": "J'ai travaillé sur le kiosque, fixé une des ailes de la Batmobile, fait de la soudure LED, travaillé sur la Batmobile et fabriqué le support de LED en forme de cercle.",
+    "charliemo_fact": "J'aime les bagels",
+
+    "kamrynhum_desc": "J'ai travaillé sur le kiosque.",
+    "kamrynhum_fact": ".",
+
+    "euniceliang_desc": "J'ai travaillé sur le kiosque (principalement la figurine de Batman) et sur la vidéo.",
+    "euniceliang_fact": "Je dois réparer mon horaire de sommeil.",
+
+    "tommisabra_desc": "J'ai enseigné la programmation pour la compétition.",
+    "tommisabra_fact": "N/A",
+
+    "adihverma_desc": "J'ai conçu et construit le robot, en plus d'avoir rédigé le contenu du site web.",
+    "adihverma_fact": "Ajoutez-moi sur Fortnite 🤪 : Gamer007ny",
+
+    "zacharystewart_desc": "J'ai construit le robot et conçu ses pièces en CAD.",
+    "zacharystewart_fact": "N/A",
+
+    "alanamangione_desc": "J'ai joué dans la vidéo et aidé avec le site web.",
+    "alanamangione_fact": "Je ne connais rien au codage. C'est malaisant.",
+
+    "sofiamazareanu_desc": "J'ai réalisé la vidéo et écrit le scénario.",
+    "sofiamazareanu_fact": "J'aime la couleur bleue."
+    
 }

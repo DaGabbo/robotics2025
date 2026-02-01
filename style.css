@@ -12,7 +12,7 @@
 body {
             background-color: #0D0D0D;
             background-image: url("batmanhud.png");
-            font-family:'Lato';
+            font-family:'Aberato';
             color: rgb(93, 235, 233);
             background-repeat: no-repeat;
             background-position: center;
@@ -199,7 +199,7 @@ p {
 }
 .folder img {
   transition: 0.5s ;
-  width: 18vw;
+  width: 14vw;
 }
 .folder_text {
   font-family: 'BatmanForever', sans-serif;
@@ -314,7 +314,7 @@ p {
 }
 
 .member-container img {
-  width: 20vw;
+  width: 15vw;
   object-fit: cover;
   border-radius: 12px;
 }
