@@ -63,7 +63,7 @@
 
         .header {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             width: 100%;
         }
 
@@ -163,6 +163,35 @@
             letter-spacing: 3px;
             transition: opacity 0.8s ease;
         }
+
+        .brand-stack-fixed {
+            position: fixed;
+            top: 40px;
+            left: 60px;
+            z-index: 40;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            pointer-events: auto;
+        }
+
+        .back-btn {
+            background: rgba(0, 0, 0, 0.85);
+            color: var(--bat-cyan);
+            border: 1px solid var(--bat-cyan);
+            padding: 10px 16px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.2);
+        }
+
+        .back-btn:hover {
+            background: rgba(0, 255, 255, 0.1);
+        }
     </style>
 
     <script type="importmap">
@@ -181,11 +210,15 @@
         <div style="font-size: 0.8rem; margin-top:10px; opacity:0.7;">INITIALIZING TIMELINE: 2022</div>
     </div>
 
+    <div class="brand-stack-fixed">
+        <div class="brand-box"><div class="brand">WIC Robotics Timeline</div></div>
+        <button class="back-btn" type="button" onclick="window.history.back()">Back</button>
+    </div>
+
     <div class="scanlines"></div>
 
     <div id="ui-layer">
         <div class="header">
-            <div class="brand-box"><div class="brand">WIC Robotics Timeline</div></div>
             <div class="brand-box"><div class="brand" id="date-display">2022</div></div>
         </div>
 
@@ -557,14 +590,6 @@
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
-            composer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        animate();
-
-    </script>
-</body>
-</html>rHeight);
             composer.setSize(window.innerWidth, window.innerHeight);
         });
 
