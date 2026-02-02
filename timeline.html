@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHRONOS: CLEAN_VIEW</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bat-cyan: #00ffff;
+            --bat-blue: #0055ff;
+            --bat-dark: #000205;
+        }
+
+        body { 
+            margin: 0; 
+            overflow: hidden; 
+            background-color: var(--bat-dark); 
+            font-family: 'Share Tech Mono', monospace;
+            color: var(--bat-cyan);
+            user-select: none;
+        }
+
+        #canvas-container {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            z-index: 1;
+        }
+
+        .scanlines {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(255,255,255,0),
+                rgba(255,255,255,0) 50%,
+                rgba(0,0,0,0.1) 50%,
+                rgba(0,0,0,0.1)
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 20;
+            opacity: 0.15;
+        }
+
+        #ui-layer {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 10;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px 60px; 
+            box-sizing: border-box; 
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .brand-box {
+            border: 1px solid var(--bat-cyan);
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.85);
+            white-space: nowrap; 
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+        }
+
+        .brand {
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .dashboard {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end; 
+            align-items: flex-end;
+            padding-bottom: 20px; 
+        }
+
+        #info-panel {
+            background: rgba(0, 2, 5, 0.95);
+            border: 1px solid var(--bat-cyan);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+            width: 450px;
+            padding: 30px;
+            transform: translateX(50px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 20px);
+            backdrop-filter: blur(5px);
+        }
+
+        #info-panel.active {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .monarch-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 2.8rem;
+            color: #fff;
+            margin: 0;
+            text-transform: uppercase;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .monarch-meta {
+            color: var(--bat-cyan);
+            font-size: 1.1rem;
+            margin: 5px 0 15px 0;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .monarch-desc {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #b0c0d0;
+        }
+
+        #progress-line-bg {
+            position: fixed;
+            bottom: 0; left: 0;
+            width: 100%; height: 6px;
+            background: #00111f;
+            z-index: 30;
+        }
+        #progress-line-fill {
+            height: 100%;
+            width: 0%; 
+            background: var(--bat-cyan);
+            box-shadow: 0 0 15px var(--bat-cyan);
+            transition: width 0.1s linear;
+        }
+
+        #loading {
+            position: fixed;
+            top:0; left:0; width:100%; height:100%;
+            background: #000;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--bat-cyan);
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            transition: opacity 0.8s ease;
+        }
+    </style>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div id="loading">
+        <div>SYSTEM STARTUP</div>
+        <div style="font-size: 0.8rem; margin-top:10px; opacity:0.7;">INITIALIZING TIMELINE: 2022</div>
+    </div>
+
+    <div class="scanlines"></div>
+
+    <div id="ui-layer">
+        <div class="header">
+            <div class="brand-box"><div class="brand">WIC Robotics Timeline</div></div>
+            <div class="brand-box"><div class="brand" id="date-display">2022</div></div>
+        </div>
+
+        <div class="dashboard">
+            <div id="info-panel">
+                <h1 class="monarch-title" id="ui-name">Name</h1>
+                <div class="monarch-meta" id="ui-meta">Date | House</div>
+                <div class="monarch-desc" id="ui-desc">Description</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="progress-line-bg">
+        <div id="progress-line-fill"></div>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+        import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+        import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+
+        // =============================================================================
+        // 1. CARD TEXT STYLE CONFIGURATION (Edit this to change look)
+        // =============================================================================
+        const CARD_STYLE = {
+            // Main Title (e.g. "Charles III")
+            titleColor: '#ffffff',
+            titleFont: '800 90px Rajdhani',       // Font for normal names
+            titleFontLong: '800 60px Rajdhani',   // Font for very long names
+            titleY: 240,                          // Vertical position (0 is top)
+
+            // Date Text (e.g. "[ 2022-Present ]")
+            dateColor: '#00ffff',
+            dateFont: '500 50px Share Tech Mono',
+            dateY: 380,                           // Vertical position
+            
+            // Border Color
+            borderColor: '#00ffff'
+        };
+
+        // =============================================================================
+        // 2. DATA 
+        // =============================================================================
+        const TIMELINE_DATA = [
+            { name: "CRC Competition", date: "FIN", house: "SPECIAL", desc: "Project Completed. End of line.", isCenter: true },
+            { name: "Henry VII", date: "1485–1509", house: "Tudor", desc: "Ended the Wars of the Roses. Founded the Tudor dynasty." },
+            { name: "Henry VIII", date: "1509–1547", house: "Tudor", desc: "Known for his six marriages and initiating the English Reformation." },
+            { name: "Edward VI", date: "1547–1553", house: "Tudor", desc: "England's first monarch to be raised as a Protestant." },
+            { name: "Lady Jane", date: "1553", house: "Tudor", desc: "The 'Nine Days Queen', deposed and executed." },
+            { name: "Mary I", date: "1553–1558", house: "Tudor", desc: "Attempted to reverse the Reformation. 'Bloody Mary'." },
+            { name: "Elizabeth I", date: "1558–1603", house: "Tudor", desc: "The Virgin Queen. Defeated the Spanish Armada." },
+            { name: "James I", date: "1603–1625", house: "Stuart", desc: "Union of the Crowns of Scotland and England." },
+            { name: "Charles I", date: "1625–1649", house: "Stuart", desc: "Executed for treason after the Civil War." },
+            { name: "Interregnum", date: "1649–1660", house: "Republic", desc: "Rule by Oliver Cromwell as Lord Protector." },
+            { name: "Charles II", date: "1660–1685", house: "Stuart", desc: "Restored the monarchy. The 'Merry Monarch'." },
+            { name: "James II", date: "1685–1688", house: "Stuart", desc: "Deposed in the Glorious Revolution." },
+            { name: "William & Mary", date: "1689–1702", house: "Orange", desc: "Ruled jointly. Signed the Bill of Rights." },
+            { name: "Anne", date: "1702–1714", house: "Stuart", desc: "The Acts of Union created Great Britain." },
+            { name: "George I", date: "1714–1727", house: "Hanover", desc: "German-speaking King who relied on ministers." },
+            { name: "George II", date: "1727–1760", house: "Hanover", desc: "The last British monarch to lead an army in battle." },
+            { name: "George III", date: "1760–1820", house: "Hanover", desc: "Reigned during American Revolution and Napoleonic Wars." },
+            { name: "George IV", date: "1820–1830", house: "Hanover", desc: "Extravagant patron of the arts." },
+            { name: "William IV", date: "1830–1837", house: "Hanover", desc: "The Sailor King. Passed Reform Act 1832." },
+            { name: "Victoria", date: "1837–1901", house: "Hanover", desc: "Empress of India. Defined an entire century." },
+            { name: "Edward VII", date: "1901–1910", house: "Saxe-Coburg", desc: "Pioneered the Entente Cordiale." },
+            { name: "George V", date: "1910–1936", house: "Windsor", desc: "Led Britain through WWI." },
+            { name: "Edward VIII", date: "1936", house: "Windsor", desc: "Abdicated to marry Wallis Simpson." },
+            { name: "George VI", date: "1936–1952", house: "Windsor", desc: "Symbol of courage during WWII." },
+            { name: "Elizabeth II", date: "1952–2022", house: "Windsor", desc: "The longest-reigning British monarch." },
+            { name: "Charles III", date: "2022–Present", house: "Windsor", desc: "The current King." }
+        ];
+
+        // =============================================================================
+        // 3. CONFIG
+        // =============================================================================
+        const CONFIG = {
+            wheelRadius: 120,    
+            roadWidth: 46,       
+            scrollSpeed: 0.0008, 
+        };
+
+        const angleStep = 20 * (Math.PI / 180);
+        const maxScrollVal = ((TIMELINE_DATA.length - 1) * 20) * (Math.PI / 180);
+
+        // START POS: Charles III is visible + extra space
+        const startPos = maxScrollVal + .25;
+
+        const state = {
+            scrollPos: startPos, 
+            targetScroll: startPos,
+            activeIndex: -1,
+            maxScroll: maxScrollVal,
+            loaded: false
+        };
+
+        // =============================================================================
+        // 4. SCENE & CAMERA
+        // =============================================================================
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x000205);
+        
+        scene.fog = new THREE.Fog(0x000205, 10, 95); 
+
+        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(0, 4.0, 0); 
+        camera.lookAt(0, -1.5, -50);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        // Sky Mask
+        const maskGeo = new THREE.PlaneGeometry(200, 60);
+        const maskMat = new THREE.MeshBasicMaterial({ color: 0x000205 });
+        const mask = new THREE.Mesh(maskGeo, maskMat);
+        mask.position.set(0, 35, -20); 
+        mask.lookAt(0, 0, 0);
+        scene.add(mask);
+
+        const worldGroup = new THREE.Group();
+        worldGroup.position.y = CONFIG.wheelRadius - 8; 
+        scene.add(worldGroup);
+
+        // =============================================================================
+        // 5. THE ROAD
+        // =============================================================================
+        function createRoad() {
+            const geo = new THREE.CylinderGeometry(
+                CONFIG.wheelRadius, 
+                CONFIG.wheelRadius, 
+                CONFIG.roadWidth, 
+                64, 1, true
+            );
+            
+            const canvas = document.createElement('canvas');
+            canvas.width = 1024; canvas.height = 1024;
+            const ctx = canvas.getContext('2d');
+            
+            ctx.fillStyle = '#000508';
+            ctx.fillRect(0,0,1024,1024);
+
+            // Grid
+            ctx.strokeStyle = '#00ffff'; 
+            ctx.lineWidth = 2; 
+            
+            for(let i=0; i<=6; i++) {
+                let x = (1024/6) * i;
+                ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,1024); ctx.stroke();
+            }
+
+            ctx.strokeStyle = 'rgba(0, 255, 255, 0.15)';
+            for(let i=0; i<32; i++) {
+                let y = (1024/32) * i;
+                ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(1024,y); ctx.stroke();
+            }
+
+            // Glowing Edges
+            ctx.fillStyle = '#00ffff';
+            ctx.fillRect(0,0, 15, 1024);
+            ctx.fillRect(1009,0, 15, 1024);
+
+            const tex = new THREE.CanvasTexture(canvas);
+            tex.wrapS = THREE.RepeatWrapping;
+            tex.wrapT = THREE.RepeatWrapping;
+            tex.repeat.set(1, 24); 
+            tex.anisotropy = 16;
+
+            const mat = new THREE.MeshBasicMaterial({
+                map: tex,
+                color: 0xffffff, 
+                side: THREE.BackSide,
+                transparent: true,
+                opacity: 0.9
+            });
+
+            const mesh = new THREE.Mesh(geo, mat);
+            mesh.rotation.z = Math.PI / 2; 
+            worldGroup.add(mesh);
+        }
+        createRoad();
+
+        // =============================================================================
+        // 6. CARDS (UPDATED GENERATOR)
+        // =============================================================================
+        const cards = [];
+        const cardGeo = new THREE.BoxGeometry(22, 11, 0.5); 
+
+        function createCardTexture(text, date) {
+            const cvs = document.createElement('canvas');
+            cvs.width = 1024; cvs.height = 512; 
+            const ctx = cvs.getContext('2d');
+
+            // 1. Background
+            ctx.fillStyle = 'rgba(0,10,20,0.95)';
+            ctx.fillRect(0,0,1024,512);
+
+            // 2. Border
+            ctx.strokeStyle = CARD_STYLE.borderColor;
+            ctx.lineWidth = 15;
+            ctx.strokeRect(10,10,1004,492);
+            
+            ctx.textAlign = 'center';
+
+            // 3. Title (Name)
+            if (text.length > 15) {
+                 ctx.font = CARD_STYLE.titleFontLong;
+            } else {
+                 ctx.font = CARD_STYLE.titleFont;
+            }
+            
+            ctx.fillStyle = CARD_STYLE.titleColor; 
+            ctx.fillText(text.toUpperCase(), 512, CARD_STYLE.titleY);
+
+            // 4. Date
+            ctx.font = CARD_STYLE.dateFont;
+            ctx.fillStyle = CARD_STYLE.dateColor;
+            ctx.fillText(`[ ${date} ]`, 512, CARD_STYLE.dateY);
+
+            return new THREE.CanvasTexture(cvs);
+        }
+
+        TIMELINE_DATA.forEach((data, i) => {
+            const angle = i * angleStep;
+
+            const mat = new THREE.MeshBasicMaterial({
+                map: createCardTexture(data.name, data.date),
+            });
+
+            const mesh = new THREE.Mesh(cardGeo, mat);
+            const pivot = new THREE.Group();
+            worldGroup.add(pivot);
+            
+            pivot.rotation.x = -angle;
+
+            const r = CONFIG.wheelRadius; 
+            
+            let xOffset = 0;
+            let yRot = 0;
+
+            if (data.isCenter) {
+                xOffset = 0; 
+                yRot = 0;    
+            } else {
+                const isLeft = i % 2 !== 0; 
+                xOffset = isLeft ? -16 : 16; 
+                yRot = isLeft ? 0.45 : -0.45;
+            }
+            
+            mesh.position.set(xOffset, -r + 9, 0); 
+            mesh.rotation.x = -Math.PI / 2 + 1.35; 
+            mesh.rotation.y = yRot;
+
+            pivot.add(mesh);
+            cards.push({ pivot, angle, date: data.date.split('–')[0] });
+        });
+
+        // =============================================================================
+        // 7. COMPOSER
+        // =============================================================================
+        const composer = new EffectComposer(renderer);
+        composer.addPass(new RenderPass(scene, camera));
+        
+        const bloom = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85);
+        bloom.threshold = 0.1; 
+        bloom.strength = 1.3; 
+        bloom.radius = 0.5;
+        composer.addPass(bloom);
+
+        // =============================================================================
+        // 8. LOGIC & ANIMATION
+        // =============================================================================
+        
+        window.addEventListener('wheel', (e) => {
+            state.targetScroll -= e.deltaY * CONFIG.scrollSpeed;
+        });
+
+        const uiPanel = document.getElementById('info-panel');
+        const uiName = document.getElementById('ui-name');
+        const uiMeta = document.getElementById('ui-meta');
+        const uiDesc = document.getElementById('ui-desc');
+        const dateDisplay = document.getElementById('date-display');
+        const progressFill = document.getElementById('progress-line-fill');
+        const loadingScreen = document.getElementById('loading');
+
+        function updateUI(index) {
+            if (state.activeIndex === index) return;
+            state.activeIndex = index;
+            uiPanel.classList.remove('active');
+
+            if (index === -1) {
+                if (state.scrollPos > state.maxScroll - 0.2) {
+                    dateDisplay.innerText = "2022";
+                } else if (state.scrollPos < 0.2) {
+                    dateDisplay.innerText = "FIN";
+                } else {
+                    dateDisplay.innerText = "---";
+                }
+                return;
+            }
+
+            const d = TIMELINE_DATA[index];
+            dateDisplay.innerText = d.date.split('–')[0];
+            
+            setTimeout(() => {
+                uiName.innerText = d.name;
+                uiMeta.innerText = `${d.date} | ${d.house}`;
+                uiDesc.innerText = d.desc;
+                uiPanel.classList.add('active');
+            }, 100);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            if (!state.loaded) {
+                state.loaded = true;
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => loadingScreen.style.display = 'none', 1000);
+            }
+
+            // CLAMPING
+            state.targetScroll = Math.max(0.0, Math.min(state.maxScroll + 1.0, state.targetScroll));
+            
+            // SMOOTH EASE
+            state.scrollPos += (state.targetScroll - state.scrollPos) * 0.08;
+
+            worldGroup.rotation.x = state.scrollPos;
+
+            // PROGRESS
+            let progress = 1 - (state.scrollPos / state.maxScroll);
+            progress = Math.max(0, Math.min(1, progress));
+            progressFill.style.width = (progress * 100) + '%';
+
+            // VISIBILITY & UI
+            let closestDist = Infinity;
+            let closestIdx = -1;
+
+            cards.forEach((c, i) => {
+                const dist = Math.abs(state.scrollPos - c.angle);
+                
+                if (dist > 2.5) {
+                    c.pivot.visible = false;
+                } else {
+                    c.pivot.visible = true;
+                }
+
+                if (dist < closestDist) {
+                    closestDist = dist;
+                    closestIdx = i;
+                }
+            });
+
+            if (closestDist < 1.1 && cards[closestIdx].pivot.visible) {
+                updateUI(closestIdx);
+            } else if (closestDist > 1.2 && state.activeIndex !== -1) {
+                state.activeIndex = -1;
+                uiPanel.classList.remove('active');
+            }
+
+            composer.render();
+        }
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            composer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        animate();
+
+    </script>
+</body>
+</html>rHeight);
+            composer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        animate();
+
+    </script>
+</body>
+</html>
