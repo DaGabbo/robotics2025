@@ -113,6 +113,20 @@ function toggleFullscreen() {
 function toggleScanlines(){
   document.body.classList.toggle("scanlines");
 }
+
+function change_background(image) {
+    const content_main_element = document.getElementById("content-main");
+    //`url("${image}")` IS AI(IMPORTANT)
+    const new_background = `url("${image}")`;
+    
+    // Check computed background (works even if set in CSS)
+    const current_background = window.getComputedStyle(content_main_element).backgroundImage;
+
+    if (!current_background.includes(image)) {
+      content_main_element.style.backgroundImage = new_background;
+    }
+  }
+
 </script>
 </body>
 </html>
