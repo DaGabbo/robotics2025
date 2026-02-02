@@ -109,6 +109,29 @@
             background: rgba(0, 255, 255, 0.3);
             transform: scale(1.1);
         }
+
+        .timeline-cta {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0 40px;
+        }
+
+        .timeline-cta button {
+            background: #111;
+            color: rgb(93, 235, 233);
+            border: 2px solid rgb(93, 235, 233);
+            padding: 12px 22px;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            font-family: 'BatmanForever', sans-serif;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .timeline-cta button:hover {
+            background: #4ca2af;
+            transform: translateY(-1px);
+        }
     </style>
 </head>
 <body>
@@ -120,6 +143,11 @@
 
 <!-- Navigation Menu -->
 
+<div class="timeline-cta">
+    <button onclick="window.location.href = 'timeline.html';">
+        View Timeline
+    </button>
+</div>
 
 <!-- Body Section -->
 <div class="content">
