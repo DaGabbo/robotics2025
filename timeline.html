@@ -243,97 +243,70 @@
         import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
         import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 
-        // =============================================================================
-        // 1. CARD TEXT STYLE CONFIGURATION (Edit this to change look)
-        // =============================================================================
-        const CARD_STYLE = {
-            // Main Title (e.g. "Charles III")
+        // Styling for the floating cards text
+        const cardAppearance = {
             titleColor: '#ffffff',
-            titleFont: '800 90px Rajdhani',       // Font for normal names
-            titleFontLong: '800 60px Rajdhani',   // Font for very long names
-            titleY: 240,                          // Vertical position (0 is top)
-
-            // Date Text (e.g. "[ 2022-Present ]")
+            titleFont: '800 90px Rajdhani',
+            titleFontLong: '800 60px Rajdhani',
+            titleY: 240,
             dateColor: '#00ffff',
             dateFont: '500 50px Share Tech Mono',
-            dateY: 380,                           // Vertical position
-            
-            // Border Color
+            dateY: 380,
             borderColor: '#00ffff'
         };
 
-        // =============================================================================
-        // 2. DATA 
-        // =============================================================================
-        const TIMELINE_DATA = [
+        const timelineEvents = [
             { name: "CRC Competition", date: "FIN", desc: "Project Completed. End of line.", isCenter: true },
-            { name: "test", date: "JANUARY", desc: `-Finishing the last scenes 
--Editing and finishing the entire video 
-` },
-            { name: "test", date: "NOVEMBER-DECEMBER", desc: `-Action scenes being filmed; more time-consuming
--Staying after school more often to film
--Editing scenes as we go, looking into editing ideas, special effects, etc. 
-` },
-            { name: "test", date: "OCTOBER-NOVEMBER", desc: `-Script completed 
--Start brainstorming where each scene will be filmed and how it will be filmed
--Finalizing who will be acting in the video and who they will be
--Buying costumes for the actors 
--Beginning the filming process
-` },
-            { name: "Starting", date: "SEPTEMBER", desc: `-Brainstorming
--Writing the script
--Actor recruitment
-` },
+            { name: "Ready… Set…", date: "FEBRUARY-CURRENT", desc: `-Solved advanced programming problems beyond expectations, demonstrating significant progress from knowing nothing four months earlier.` },
+            { name: "Improvement", date: "JANUARY", desc: `-Built on students’ improvement, strong problem-solving skills, and full Python knowledge, we explored deeper topics such as binary trees and recursion.` },
+            { name: "Comp Practice", date: "NOVEMBER-DECEMBER", desc: `-Trained students for the upcoming competition through preliminaries. \n-Conducted a full-day simulation on a PED day using past TAKTIK, bringing preparations back on track.` },
+            { name: "Roadblock", date: "November", desc: `-Students struggled to learn because they were only asked to copy code, limiting their ability to apply it creatively, as seen in the first preliminary.` },
+            { name: "Complexification (Arrays)", date: "OCTOBER", desc: `-Commencing more and more complex elements of python to teach to junior students such as; arrays, lists, dictionaries, etc.\n-Encountering harder concepts and increased difficulty for students.` },
+            { name: "Foundation", date: "AUGUST-SEPTEMBER", desc: `-Creating python curriculum and google classroom.\n-Teaching and initiating the juniors members to the basics of python(input, print, if, else, elif, for loops).` },
+            { name: "Programming Team", date: "BEGINNING", desc: "This marks the beginning of the Programming Team's progress", isCenter: true },
+            { name: "Claw", date: "January-February", desc: `-CAD the sprockets for the chain-pulley system\n-Calculate increased moment of inertia and build lift` },
+            { name: "Electronics", date: "January", desc: `-Optimize the positioning of the electronics, on the main frame of the robot, while ensuring reliability, maintainability with clean cable managing` },
+            { name: "Drive", date: "DECEMBER-JANUARY", desc: `-Build the drive system\n-Build bracing and connected bearings/gears\n-Changed from tread drive to RWD independent drive sys.` },
+            { name: "Conveyors", date: "NOVEMBER-DECEMBER", desc: `-Build / Design the conveyor systems distinct to each GP\n-CAD the chain, dividers and sprockets for the conveyor\n-CAD the bearing mount and bracket for the conveyor` },
+            { name: "Frame", date: "OCTOBER", desc: `-Build the frame of the robot\n-Finalize dimensions and main chassis bracing` },
+            { name: "Robot Team", date: "BEGINNING", desc: "This marks the beginning of the Robot Team's progress", isCenter: true },
+            { name: "Finalizing Edits", date: "JANUARY", desc: `-Finishing the last scenes \n-Editing and finishing the entire video` },
+            { name: "Filming", date: "NOVEMBER-DECEMBER", desc: `-Action scenes being filmed; more time-consuming\n-Staying after school more often to film\n-Editing scenes as we go, looking into editing ideas, special effects, etc.` },
+            { name: "Preparation", date: "OCTOBER-NOVEMBER", desc: `-Script completed \n-Start brainstorming where each scene will be filmed and how it will be filmed\n-Finalizing who will be acting in the video and who they will be\n-Buying costumes for the actors \n-Beginning the filming process` },
+            { name: "Brainstorming", date: "SEPTEMBER", desc: `-Brainstorming\n-Writing the script\n-Actor recruitment` },
             { name: "Video Team", date: "BEGINNING", desc: "This marks the beginning of the Video Team's progress", isCenter: true },
-            { name: "Finalization", date: "JANUARY-FEBRUARY", desc: `-Finalizing walls and car
--Tables being built 
--Finalizing pinball machine code, 3D printed objects for kiosk, etc. 
--Physically laying out the kiosk on the stage to see how it looks 
-` },
-            { name: "Action", date: "NOVEMBER-DECEMBER", desc: `-Worked on the car
--Walls being sketched and painted 
-` },
-            { name: "Preparation", date: "OCTOBER-NOVEMBER", desc: `-Preparing walls. Wanted to redo the walls entirely in comparison to last year 
--Started designing and building the car: car frame
-` },
-            { name: "Brainstorming", date: "FEBRUARY-MAY AND SEPTEMBER", desc: `-Discussed organizing kiosk layout; walls and wow factors. and ways to make construction achievable while also keeping a good visual factor
--Construction of pinball machine 
--Training session for juniors 
--Deciding on construction of batmobile 
--Ordering supplies` },
+            { name: "Finalization", date: "JANUARY-FEBRUARY", desc: `-Finalizing walls and car\n-Tables being built \n-Finalizing pinball machine code, 3D printed objects for kiosk, etc. \n-Physically laying out the kiosk on the stage to see how it looks` },
+            { name: "Action", date: "NOVEMBER-DECEMBER", desc: `-Worked on the car\n-Walls being sketched and painted` },
+            { name: "Preparation", date: "OCTOBER-NOVEMBER", desc: `-Preparing walls. Wanted to redo the walls entirely in comparison to last year \n-Started designing and building the car: car frame` },
+            { name: "Brainstorming", date: "FEBRUARY-MAY AND SEPTEMBER", desc: `-Discussed organizing kiosk layout; walls and wow factors. and ways to make construction achievable while also keeping a good visual factor\n-Construction of pinball machine \n-Training session for juniors \n-Deciding on construction of batmobile \n-Ordering supplies` },
             { name: "Kiosk Team", date: "BEGINNING", desc: "This marks the beginning of the Kiosk team's progress", isCenter: true }
         ];
 
-        // =============================================================================
-        // 3. CONFIG
-        // =============================================================================
-        const CONFIG = {
+        // World physics and scroll settings
+        const worldSettings = {
             wheelRadius: 120,    
             roadWidth: 46,       
             scrollSpeed: 0.0008, 
         };
 
-        const angleStep = 20 * (Math.PI / 180);
-        const maxScrollVal = ((TIMELINE_DATA.length - 1) * 20) * (Math.PI / 180);
+        const anglePerCard = 20 * (Math.PI / 180);
+        const maxScrollLimit = ((timelineEvents.length - 1) * 20) * (Math.PI / 180);
 
-        // START POS: Charles III is visible + extra space
-        const startPos = maxScrollVal + .25;
+        // Start at the end (Charles III equivalent) + a little buffer
+        const startPosition = maxScrollLimit + .25;
 
-        const state = {
-            scrollPos: startPos, 
-            targetScroll: startPos,
-            activeIndex: -1,
-            maxScroll: maxScrollVal,
-            loaded: false
+        // Track the user's scroll position and load state
+        const viewerState = {
+            currentScroll: startPosition, 
+            targetScroll: startPosition,
+            activeCardIndex: -1,
+            maxScroll: maxScrollLimit,
+            isLoaded: false
         };
 
-        // =============================================================================
-        // 4. SCENE & CAMERA
-        // =============================================================================
-        const container = document.getElementById('canvas-container');
+        const canvasWrapper = document.getElementById('canvas-container');
         const scene = new THREE.Scene();
         scene.background = new THREE.Color(0x000205);
-        
         scene.fog = new THREE.Fog(0x000205, 10, 95); 
 
         const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -343,173 +316,168 @@
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        container.appendChild(renderer.domElement);
+        canvasWrapper.appendChild(renderer.domElement);
 
-        // Sky Mask
-        const maskGeo = new THREE.PlaneGeometry(200, 60);
-        const maskMat = new THREE.MeshBasicMaterial({ color: 0x000205 });
-        const mask = new THREE.Mesh(maskGeo, maskMat);
-        mask.position.set(0, 35, -20); 
-        mask.lookAt(0, 0, 0);
-        scene.add(mask);
+        // Hide the top of the wheel so cards don't float in the sky
+        const skyMaskGeo = new THREE.PlaneGeometry(200, 60);
+        const skyMaskMat = new THREE.MeshBasicMaterial({ color: 0x000205 });
+        const skyMask = new THREE.Mesh(skyMaskGeo, skyMaskMat);
+        skyMask.position.set(0, 35, -20); 
+        skyMask.lookAt(0, 0, 0);
+        scene.add(skyMask);
 
-        const worldGroup = new THREE.Group();
-        worldGroup.position.y = CONFIG.wheelRadius - 8; 
-        scene.add(worldGroup);
+        // This group acts as the main spinning drum
+        const timelineRig = new THREE.Group();
+        timelineRig.position.y = worldSettings.wheelRadius - 8; 
+        scene.add(timelineRig);
 
-        // =============================================================================
-        // 5. THE ROAD
-        // =============================================================================
-        function createRoad() {
-            const geo = new THREE.CylinderGeometry(
-                CONFIG.wheelRadius, 
-                CONFIG.wheelRadius, 
-                CONFIG.roadWidth, 
+        function buildRoadway() {
+            const cylinderGeo = new THREE.CylinderGeometry(
+                worldSettings.wheelRadius, 
+                worldSettings.wheelRadius, 
+                worldSettings.roadWidth, 
                 64, 1, true
             );
             
-            const canvas = document.createElement('canvas');
-            canvas.width = 1024; canvas.height = 1024;
-            const ctx = canvas.getContext('2d');
+            const roadCanvas = document.createElement('canvas');
+            roadCanvas.width = 1024; roadCanvas.height = 1024;
+            const context = roadCanvas.getContext('2d');
             
-            ctx.fillStyle = '#000508';
-            ctx.fillRect(0,0,1024,1024);
+            // Dark base
+            context.fillStyle = '#000508';
+            context.fillRect(0,0,1024,1024);
 
-            // Grid
-            ctx.strokeStyle = '#00ffff'; 
-            ctx.lineWidth = 2; 
+            // Neon Grid lines
+            context.strokeStyle = '#00ffff'; 
+            context.lineWidth = 2; 
             
             for(let i=0; i<=6; i++) {
                 let x = (1024/6) * i;
-                ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,1024); ctx.stroke();
+                context.beginPath(); context.moveTo(x,0); context.lineTo(x,1024); context.stroke();
             }
 
-            ctx.strokeStyle = 'rgba(0, 255, 255, 0.15)';
+            context.strokeStyle = 'rgba(0, 255, 255, 0.15)';
             for(let i=0; i<32; i++) {
                 let y = (1024/32) * i;
-                ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(1024,y); ctx.stroke();
+                context.beginPath(); context.moveTo(0,y); context.lineTo(1024,y); context.stroke();
             }
 
             // Glowing Edges
-            ctx.fillStyle = '#00ffff';
-            ctx.fillRect(0,0, 15, 1024);
-            ctx.fillRect(1009,0, 15, 1024);
+            context.fillStyle = '#00ffff';
+            context.fillRect(0,0, 15, 1024);
+            context.fillRect(1009,0, 15, 1024);
 
-            const tex = new THREE.CanvasTexture(canvas);
-            tex.wrapS = THREE.RepeatWrapping;
-            tex.wrapT = THREE.RepeatWrapping;
-            tex.repeat.set(1, 24); 
-            tex.anisotropy = 16;
+            const roadTexture = new THREE.CanvasTexture(roadCanvas);
+            roadTexture.wrapS = THREE.RepeatWrapping;
+            roadTexture.wrapT = THREE.RepeatWrapping;
+            roadTexture.repeat.set(1, 24); 
+            roadTexture.anisotropy = 16;
 
-            const mat = new THREE.MeshBasicMaterial({
-                map: tex,
+            const roadMaterial = new THREE.MeshBasicMaterial({
+                map: roadTexture,
                 color: 0xffffff, 
                 side: THREE.BackSide,
                 transparent: true,
                 opacity: 0.9
             });
 
-            const mesh = new THREE.Mesh(geo, mat);
-            mesh.rotation.z = Math.PI / 2; 
-            worldGroup.add(mesh);
+            const roadMesh = new THREE.Mesh(cylinderGeo, roadMaterial);
+            roadMesh.rotation.z = Math.PI / 2; 
+            timelineRig.add(roadMesh);
         }
-        createRoad();
+        
+        buildRoadway();
 
-        // =============================================================================
-        // 6. CARDS (UPDATED GENERATOR)
-        // =============================================================================
-        const cards = [];
-        const cardGeo = new THREE.BoxGeometry(22, 11, 0.5); 
+        // Setup the card objects
+        const milestoneCards = [];
+        const boxGeometry = new THREE.BoxGeometry(22, 11, 0.5); 
 
-        function createCardTexture(text, date) {
+        function generateCardTexture(text, date) {
             const cvs = document.createElement('canvas');
             cvs.width = 1024; cvs.height = 512; 
             const ctx = cvs.getContext('2d');
 
-            // 1. Background
+            // Card Background
             ctx.fillStyle = 'rgba(0,10,20,0.95)';
             ctx.fillRect(0,0,1024,512);
 
-            // 2. Border
-            ctx.strokeStyle = CARD_STYLE.borderColor;
+            // Neon Border
+            ctx.strokeStyle = cardAppearance.borderColor;
             ctx.lineWidth = 15;
             ctx.strokeRect(10,10,1004,492);
             
             ctx.textAlign = 'center';
 
-            // 3. Title (Name)
+            // Title logic (shrink font if name is huge)
             if (text.length > 15) {
-                 ctx.font = CARD_STYLE.titleFontLong;
+                 ctx.font = cardAppearance.titleFontLong;
             } else {
-                 ctx.font = CARD_STYLE.titleFont;
+                 ctx.font = cardAppearance.titleFont;
             }
             
-            ctx.fillStyle = CARD_STYLE.titleColor; 
-            ctx.fillText(text.toUpperCase(), 512, CARD_STYLE.titleY);
+            ctx.fillStyle = cardAppearance.titleColor; 
+            ctx.fillText(text.toUpperCase(), 512, cardAppearance.titleY);
 
-            // 4. Date
-            ctx.font = CARD_STYLE.dateFont;
-            ctx.fillStyle = CARD_STYLE.dateColor;
-            ctx.fillText(`[ ${date} ]`, 512, CARD_STYLE.dateY);
+            // Date text
+            ctx.font = cardAppearance.dateFont;
+            ctx.fillStyle = cardAppearance.dateColor;
+            ctx.fillText(`[ ${date} ]`, 512, cardAppearance.dateY);
 
             return new THREE.CanvasTexture(cvs);
         }
 
-        TIMELINE_DATA.forEach((data, i) => {
-            const angle = i * angleStep;
+        timelineEvents.forEach((event, i) => {
+            const angle = i * anglePerCard;
 
-            const mat = new THREE.MeshBasicMaterial({
-                map: createCardTexture(data.name, data.date),
+            const material = new THREE.MeshBasicMaterial({
+                map: generateCardTexture(event.name, event.date),
             });
 
-            const mesh = new THREE.Mesh(cardGeo, mat);
-            const pivot = new THREE.Group();
-            worldGroup.add(pivot);
+            const mesh = new THREE.Mesh(boxGeometry, material);
+            const pivotGroup = new THREE.Group();
+            timelineRig.add(pivotGroup);
             
-            pivot.rotation.x = -angle;
+            pivotGroup.rotation.x = -angle;
 
-            const r = CONFIG.wheelRadius; 
+            const r = worldSettings.wheelRadius; 
             
+            // Stagger cards left/right unless it's a section header
             let xOffset = 0;
-            let yRot = 0;
+            let yRotation = 0;
 
-            if (data.isCenter) {
+            if (event.isCenter) {
                 xOffset = 0; 
-                yRot = 0;    
+                yRotation = 0;    
             } else {
                 const isLeft = i % 2 !== 0; 
                 xOffset = isLeft ? -16 : 16; 
-                yRot = isLeft ? 0.45 : -0.45;
+                yRotation = isLeft ? 0.45 : -0.45;
             }
             
             mesh.position.set(xOffset, -r + 9, 0); 
             mesh.rotation.x = -Math.PI / 2 + 1.35; 
-            mesh.rotation.y = yRot;
+            mesh.rotation.y = yRotation;
 
-            pivot.add(mesh);
-            cards.push({ pivot, angle, date: data.date.split('–')[0] });
+            pivotGroup.add(mesh);
+            milestoneCards.push({ pivot: pivotGroup, angle, date: event.date.split('–')[0] });
         });
 
-        // =============================================================================
-        // 7. COMPOSER
-        // =============================================================================
+        // Post-processing for that neon glow
         const composer = new EffectComposer(renderer);
         composer.addPass(new RenderPass(scene, camera));
         
-        const bloom = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85);
-        bloom.threshold = 0.1; 
-        bloom.strength = 1.3; 
-        bloom.radius = 0.5;
-        composer.addPass(bloom);
+        const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85);
+        bloomPass.threshold = 0.1; 
+        bloomPass.strength = 1.3; 
+        bloomPass.radius = 0.5;
+        composer.addPass(bloomPass);
 
-        // =============================================================================
-        // 8. LOGIC & ANIMATION
-        // =============================================================================
-        
+        // Handle scrolling
         window.addEventListener('wheel', (e) => {
-            state.targetScroll -= e.deltaY * CONFIG.scrollSpeed;
+            viewerState.targetScroll -= e.deltaY * worldSettings.scrollSpeed;
         });
 
+        // UI Element References
         const uiPanel = document.getElementById('info-panel');
         const uiName = document.getElementById('ui-name');
         const uiMeta = document.getElementById('ui-meta');
@@ -518,15 +486,16 @@
         const progressFill = document.getElementById('progress-line-fill');
         const loadingScreen = document.getElementById('loading');
 
-        function updateUI(index) {
-            if (state.activeIndex === index) return;
-            state.activeIndex = index;
+        function updateInfoPanel(index) {
+            if (viewerState.activeCardIndex === index) return;
+            viewerState.activeCardIndex = index;
             uiPanel.classList.remove('active');
 
+            // If no card is focused, show general status
             if (index === -1) {
-                if (state.scrollPos > state.maxScroll - 0.2) {
+                if (viewerState.currentScroll > viewerState.maxScroll - 0.2) {
                     dateDisplay.innerText = "2022";
-                } else if (state.scrollPos < 0.2) {
+                } else if (viewerState.currentScroll < 0.2) {
                     dateDisplay.innerText = "FIN";
                 } else {
                     dateDisplay.innerText = "---";
@@ -534,62 +503,67 @@
                 return;
             }
 
-            const d = TIMELINE_DATA[index];
-            dateDisplay.innerText = d.date.split('–')[0];
+            const data = timelineEvents[index];
+            dateDisplay.innerText = data.date.split('–')[0];
             
+            // Short delay for transition effect
             setTimeout(() => {
-                uiName.innerText = d.name;
-                uiMeta.innerText = `${d.date}`;
-                uiDesc.innerText = d.desc;
+                uiName.innerText = data.name;
+                uiMeta.innerText = `${data.date}`;
+                uiDesc.innerText = data.desc;
                 uiPanel.classList.add('active');
             }, 100);
         }
 
-        function animate() {
-            requestAnimationFrame(animate);
+        function gameLoop() {
+            requestAnimationFrame(gameLoop);
 
-            if (!state.loaded) {
-                state.loaded = true;
+            // Handle initial load animation
+            if (!viewerState.isLoaded) {
+                viewerState.isLoaded = true;
                 loadingScreen.style.opacity = '0';
                 setTimeout(() => loadingScreen.style.display = 'none', 1000);
             }
 
-            // CLAMPING
-            state.targetScroll = Math.max(0.0, Math.min(state.maxScroll + 1.0, state.targetScroll));
+            // Clamp scroll to start/end
+            viewerState.targetScroll = Math.max(0.0, Math.min(viewerState.maxScroll + 1.0, viewerState.targetScroll));
             
-            // SMOOTH EASE
-            state.scrollPos += (state.targetScroll - state.scrollPos) * 0.08;
+            // Smooth scroll physics
+            viewerState.currentScroll += (viewerState.targetScroll - viewerState.currentScroll) * 0.08;
 
-            worldGroup.rotation.x = state.scrollPos;
+            timelineRig.rotation.x = viewerState.currentScroll;
 
-            // PROGRESS
-            let progress = 1 - (state.scrollPos / state.maxScroll);
+            // Update bottom progress bar
+            let progress = 1 - (viewerState.currentScroll / viewerState.maxScroll);
             progress = Math.max(0, Math.min(1, progress));
             progressFill.style.width = (progress * 100) + '%';
 
-            // VISIBILITY & UI
-            let closestDist = Infinity;
-            let closestIdx = -1;
+            // Check which card is closest to the viewer
+            let closestDistance = Infinity;
+            let closestIndex = -1;
 
-            cards.forEach((c, i) => {
-                const dist = Math.abs(state.scrollPos - c.angle - 0.2);
+            milestoneCards.forEach((card, i) => {
+                const distanceToCenter = Math.abs(viewerState.currentScroll - card.angle - 0.2);
                 
-                if (dist > 2.5) {
-                    c.pivot.visible = false;
+                // Optimization: Hide cards that are far away
+                if (distanceToCenter > 2.5) {
+                    card.pivot.visible = false;
                 } else {
-                    c.pivot.visible = true;
+                    card.pivot.visible = true;
                 }
 
-                if (dist < closestDist) {
-                    closestDist = dist;
-                    closestIdx = i;
+                if (distanceToCenter < closestDistance) {
+                    closestDistance = distanceToCenter;
+                    closestIndex = i;
                 }
             });
 
-            if (closestDist < 1.1 && cards[closestIdx].pivot.visible) {
-                updateUI(closestIdx);
-            } else if (closestDist > 1.2 && state.activeIndex !== -1) {
-                state.activeIndex = -1;
+            // Trigger UI update if a card is "locked in"
+            if (closestDistance < 1.1 && milestoneCards[closestIndex].pivot.visible) {
+                updateInfoPanel(closestIndex);
+            } else if (closestDistance > 1.2 && viewerState.activeCardIndex !== -1) {
+                // Clear UI if we are between cards
+                viewerState.activeCardIndex = -1;
                 uiPanel.classList.remove('active');
             }
 
@@ -603,9 +577,8 @@
             composer.setSize(window.innerWidth, window.innerHeight);
         });
 
-        animate();
+        gameLoop();
 
     </script>
 </body>
 </html>
-
