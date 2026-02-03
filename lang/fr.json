@@ -153,7 +153,7 @@
     "drivetitle":"Propulsion",
     "drivedesc":"Construire le système d'entraînement, construire les renforts et les roulements / engrenages connectés, passer d'un entraînement par bande de roulement à un système d'entraînement indépendant à traction arrière.",
     "lefttitle":"Électronique complète du robot",
-    "leftdesc":"Optimiser le positionnement des composants électroniques, la gestion des câbles",
+    "leftdesc":"Optimiser le positionnement des composants électroniques sur le châssis principal du robot, tout en garantissant la fiabilité, la facilité d'entretien avec une gestion propre des câbles.",
     "righttitle":"Essais",
     "rightdesc":"Tester le robot et tous ses composants sur notre terrain d'entraînement, avec les moteurs et les pièces de jeu, afin de s'assurer que tous les systèmes fonctionnent correctement et de soumettre chaque pièce à des tests de résistance.",
     
