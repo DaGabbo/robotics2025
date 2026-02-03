@@ -1,16 +1,120 @@
-<div style="text-align:center">
-<h1 data-i18n="welcome"></h1>
-<h3 data-i18n="welcome2"></h3>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-<p data-i18n="welcome3"></p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="scanlines.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="glitch.css">
+    <link rel='stylesheet'href='https://fonts.googleapis.com/css?family=Lato'>
+    <link href='https://fonts.googleapis.com/css?family=Aboreto' rel='stylesheet'>
+    
+    <style>
+      body.fade-start {
+        opacity: 0;
+      }
+
+      body.fade-in {
+        animation: page-fade-in 0.8s ease forwards;
+      }
+
+      @keyframes page-fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+</head>
+
+
+<body class="scanlines fade-start">
+    <div class="sidebar" id="sidebar">    
+          </div>
+    <span class="sidebar-indicator" aria-hidden="true"></span>
+    <div class="layout-container">
+        
+        <main id="content-main">
+        </main>
+    </div>
+<script src="js/i18n.js"></script>
+<script src="js/site.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+  });
+</script>
+<script>
+        // Load saved language or default to English
+        loadLanguage(localStorage.getItem("lang") || "en");
+        loadContent('opening.html','content-main')
+        loadContent('sidebars/home_sidebar.html','sidebar')
+        
+    </script>
+<script>
+function openNav() {
+  document.getElementById("sidebar").style.width = "30vw";
+  document.getElementById("sidebar").style.padding = "1.5vw";
+  document.getElementById("content-main").style.marginLeft = "0px";
+  document.documentElement.style.setProperty("--sidebar-width", "30vw");
+}
+
+function closeNav() {
+  document.getElementById("sidebar").style.width = "0vw";
+  document.getElementById("sidebar").style.padding = "0px";
+  document.getElementById("content-main").style.marginLeft= "0px";
+  document.documentElement.style.setProperty("--sidebar-width", "0vw");
+}
+
+document.addEventListener("mousemove", (e) => {
+  if (e.clientX <= 10) {
+    openNav()
+  }
+  if (e.clientX > window.innerWidth*0.32){
+    closeNav()
+  }
+
+});
+</script>
+<script>
+var elem = document.documentElement;
+function toggleFullscreen() {
+  if (
+    document.fullscreenElement ||
+    document.webkitFullscreenElement ||
+    document.msFullscreenElement
+  ) {
+    // EXIT fullscreen
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    }
+  } else {
+    // ENTER fullscreen
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) {
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+      elem.msRequestFullscreen();
+    }
+  }
+}
+</script>
+<script>
+function toggleScanlines(){
+  document.body.classList.toggle("scanlines");
+}
+
+</script>
+</body>
+</html>
