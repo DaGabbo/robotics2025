@@ -189,6 +189,7 @@
     "conception2":"All electronics are securely mounted onto the top frame of the robot, distributed for easy access and efficiency, also providing clear accessibility to the kill switch and Crcduino. The battery is placed on the front end of the robot frame to counter weight the components - such as the 3 motor setup for the distinct conveyors - it also balances the robot's side where the wheelbase is slightly shortened for maneuverability over the engines.",
     "conception3":"Claw lift and rotating mechanism are placed at the front end of the robot at a precise position to pick up the 'core' GP through our conveyor system for maximum potential when stacking (since the 'core' is the tallest vertically placeable GP - the mechanism also acting as counterweight. The mechanism is made up of 2 large pulleys/chains, positioned for maximum moment of inertia for increased torque; This allows the claw to be rotated at a high precision while being able to carry the heaviest of game pieces.",
     "conception4":"The drive system is RWD made up of 8 distinct wheels. The front 4 wheels (2 each side sandwich) are mounted on 2 bearings and heavily braced Vex metal, a sprocket is connected in between both thin but resistant wheels for a seamless chain driven drive. The back 4 dead wheels (2 each side sandwich) are independent from each other despite being on the same shaft due to specially placed bearings, making it incredibly smooth to turn even with 2 powered wheels out of 4. The system is powered by two, 117rpm GoBilda motors for a balance of speed and torque. As a whole the drive has a very small footprint to give the robot an elite advantage when playing on the Engines.",
+    "3dmap":"3D Map of The Field",
     
     
     "charliemo_desc": "I worked on the kiosk, attached one of the Batmobile wings, did LED soldering, worked on the Batmobile, and made the LED holder shaped like a circle.",
@@ -200,8 +201,8 @@
     "euniceliang_desc": "Worked on the kiosk (mainly the Batman figure) and the video.",
     "euniceliang_fact": "I need to fix my sleep schedule.",
 
-    "tommisabra_desc": "Taught programming for the competition.",
-    "tommisabra_fact": "N/A",
+    "tommisabra_desc": "Taught programming for the competition and worked on the site.",
+    "tommisabra_fact": "Yes, I did stay up until 2am working on this site 🫩",
 
     "adihverma_desc": "I designed and built the robot, as well as wrote the content for the website.",
     "adihverma_fact": "Add me on Fortnite 🤪: Gamer007ny",
