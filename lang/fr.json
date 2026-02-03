@@ -207,6 +207,16 @@
     "alanamangione_fact": "Je ne connais rien au codage. C'est malaisant.",
 
     "sofiamazareanu_desc": "J'ai réalisé la vidéo et écrit le scénario.",
-    "sofiamazareanu_fact": "J'aime la couleur bleue."
+    "sofiamazareanu_fact": "J'aime la couleur bleue.",
+        
+    "mentordesc":"Mentor & Professeur de science",
+    "hilli_desc":"Je suis mentor du club de robotique au West Isand College.",
+    "hilli_fact":"Je connais ton signe du zodiaque.",
+    "gill_desc":"Je suis mentor du club de robotique au West Isand College.",
+    "gill_fact":"Je déteste tout le monde également.",
+    "vasili_desc":"J'ai travaillé sur le kiosque et je suis maintenant dans ler cours de programmation.",
+    "vasili_fact":"À l'âge de 2 ans, je pouvais reconnaître la plupart des marques de voitures grâce à leur logo."
+
+
     
 }
