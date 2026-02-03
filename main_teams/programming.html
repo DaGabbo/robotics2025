@@ -1,18 +1,31 @@
 <link rel="stylesheet" href="book.css">
+<div style="text-align: center"> 
+    <button class="back_button" data-i18n="back_button" onclick="loadContent('team_intro.html','content-main'); loadContent('sidebars/home_sidebar.html','sidebar')"></button>
+</div>
 <article class="comic">
 <div onclick="loadContent('members/gab.html','content-main')"class="panel">
     <p class="text top-left">Gabriel</p>
     <p class="text bottom-right">Ramos Rodriguez</p>
     <img src="comics/bat-hombre.png" alt="">
 </div>
+
+<div onclick="loadContent('members/tommi.html','content-main')"class="panel">
+    <img src="comics/rasalghul.png" alt="">
+    <p class="text top-left">Tommi Sabra</p>
+</div>
+
   <div onclick="loadContent('members/christian.html','content-main')"class="panel">
     <p class="text bottom-right">Christian Siracusa</p>
-    <img src="comics/robin.png" alt="">
+    <img src="comics/nightwing.png" alt="">
 </div>
 
 <div onclick="loadContent('members/george.html','content-main')"class="panel">
     <p class="text top-left">George</p>
     <p class="text bottom-right">Konstantopoulos</p>
     <img src="comics/firefly.png" alt="">
+</div>
+<div onclick="loadContent('members/vasili.html','content-main')"class="panel">
+    <p class="text top-left">Vasili Vitoroulis</p>
+    <img src="comics/deathstroke.png" alt="">
 </div>
 </article>
