@@ -21,7 +21,7 @@
         }
 
         header {
-            background-color: #1111;
+            background-color: #111;
             padding: 20px;
             text-align: center;
             font-size: 24px;
@@ -34,7 +34,7 @@
         }
 
         h2 {
-            font-size: 3rem; /* Approx 48px */
+            font-size: 3rem;
             margin-bottom: 30px;
         }
 
@@ -104,9 +104,6 @@
             padding: 20px;
         }
 
-        /* Added align-items: center so the text-only cards 
-           vertically align with the middle 3D card. 
-        */
         .visualizer-container {
             align-items: center;
         }
@@ -129,7 +126,6 @@
             font-size: 1.5rem; 
         }
 
-        /* FIXED: Changed text-align from left to center */
         .design-text p {
             line-height: 1.6;
             font-size: 1.1rem;
@@ -157,7 +153,7 @@
     </header>
 
     <div class="timeline-button-wrap">
-        <button data-i18n="viewtime" class="timeline-button" onclick="loadContent('timeline.html','content-main')">View Timeline</button>
+        <a href="timeline.html" data-i18n="viewtime" class="timeline-button" style="text-decoration: none; color: rgb(93, 235, 233);">View Timeline</a>
     </div>
 
     <h2 data-i18n="process" style="text-align: center">Process</h2>
