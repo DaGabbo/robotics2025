@@ -369,3 +369,18 @@ p {
   border-left: 5px solid #00f2ff;
 }
 
+.back_button {
+  position: relative;   /* anchor for absolute text */
+  display: inline-block;
+  padding: 3px;
+  text-align: center;
+  width: 15vw;
+  font-size:2.5vw;
+  font-family: 'BatmanForever', sans-serif;
+  cursor: pointer;
+  background-color: #111;
+  color: rgb(93, 235, 233);
+  border-radius: 4px;
+  border-bottom: 2vh solid rgb(93, 235, 233);
+}
+
