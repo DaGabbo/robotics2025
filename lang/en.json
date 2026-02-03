@@ -227,7 +227,15 @@
 
     "welcome":"Welcome Bruce Wayne",
     "welcome2":"----Authorized Operator: CRC Robotics Team----",
-    "welcome3":"Access systems via the sidebar to the left of the screen"
+    "welcome3":"Access systems via the sidebar to the left of the screen",
+
+    "ai1":"AI Usage",
+    "ai2":"timeline.html",
+    "ai3":"We used AI to help us make the code that shows the timeline",
+    "ai4":"site.js",
+    "ai5":"We used AI to help us make the code that loads the content in the website so that we don't need to go to another page.",
+    "ai6":"i18n.js",
+    "ai7":"We used AI to help us make the code that toggles the language from english to french."
 
 
 
