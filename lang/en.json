@@ -156,7 +156,7 @@
     "clawtitle":"Claw",
     "clawdesc":"Design claw and build the claw lift system, CAD the sprockets for the chain-pulley system, calculate increased moment of inertia and build lift",
     "lefttitle":"Complete electronics of the robot",
-    "leftdesc":"Optimize electronic’s positioning, cable managing",
+    "leftdesc":"Optimize the positioning of the electronics, on the main frame of the robot, while ensuring reliability, maintainability with clean cable managing",
     "righttitle":"Testing",
     "rightdesc":"Testing the robot and all of its components in our practice field, with engines and Game Pieces, making sure that all systems are functional and stress test each part",
     
