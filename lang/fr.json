@@ -224,7 +224,15 @@
 
     "welcome":"Bienvenu Bruce Wayne",
     "welcome2":"----Opérateur autorisé : Équipe de robotique CRC----",
-    "welcome3":"Accédez aux systèmes via la barre latérale située à gauche de l’écran"
+    "welcome3":"Accédez aux systèmes via la barre latérale située à gauche de l’écran",
+
+    "ai1":"Utilisation de l’IA",
+    "ai2":"timeline.html",
+    "ai3":"Nous avons utilisé l’IA pour nous aider à créer le code qui affiche la chronologie.",
+    "ai4":"site.js",
+    "ai5":"Nous avons utilisé l’IA pour nous aider à créer le code qui charge le contenu du site afin de ne pas avoir à aller sur une autre page.",
+    "ai6":"i18n.js",
+    "ai7":"Nous avons utilisé l’IA pour nous aider à créer le code qui permet de basculer la langue de l’anglais au français."
 
 
     
